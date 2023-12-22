@@ -96,14 +96,14 @@ public class Query
     
     public static async Task<SyncStateDto> SyncState(
         [FromServices] IClusterClient clusterClient, [FromServices] IAElfIndexerClientInfoProvider clientInfoProvider,
-        [FromServices] IObjectMapper objectMapper, GetSyncStateDto dto)
+        [FromServices] IObjectMapper objectMapper, GetSyncStateDto input)
     {
         var version = clientInfoProvider.GetVersion();
         var clientId = clientInfoProvider.GetClientId();
         var blockStateSetInfoGrain =
             clusterClient.GetGrain<IBlockStateSetInfoGrain>(
-                GrainIdHelper.GenerateGrainId("BlockStateSetInfo", clientId, dto.ChainId, version));
-        var confirmedHeight = await blockStateSetInfoGrain.GetConfirmedBlockHeight(dto.FilterType);
+                GrainIdHelper.GenerateGrainId("BlockStateSetInfo", clientId, input.ChainId, version));
+        var confirmedHeight = await blockStateSetInfoGrain.GetConfirmedBlockHeight(input.FilterType);
         return new SyncStateDto
         {
             ConfirmedBlockHeight = confirmedHeight
