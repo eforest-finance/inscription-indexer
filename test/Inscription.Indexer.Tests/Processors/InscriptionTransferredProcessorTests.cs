@@ -13,6 +13,7 @@ public class InscriptionTransferredProcessorTests: InscriptionIndexerTestBase
     private readonly InscriptionTransferredProcessor _inscriptionTransferredProcessor;
     private readonly IAElfIndexerClientEntityRepository<Entities.IssuedInscription, LogEventInfo> _issuedInscriptionRepository;
     private readonly IAElfIndexerClientEntityRepository<Entities.InscriptionTransfer, LogEventInfo> _transferRepository;
+    private readonly IAElfIndexerClientEntityRepository<Entities.Inscription, LogEventInfo> _inscriptionRepository;
 
     public InscriptionTransferredProcessorTests()
     {
@@ -21,6 +22,8 @@ public class InscriptionTransferredProcessorTests: InscriptionIndexerTestBase
         _issuedInscriptionRepository = GetRequiredService<IAElfIndexerClientEntityRepository<Entities.IssuedInscription, LogEventInfo>>();
         _transferRepository =
             GetRequiredService<IAElfIndexerClientEntityRepository<Entities.InscriptionTransfer, LogEventInfo>>();
+        _inscriptionRepository =
+            GetRequiredService<IAElfIndexerClientEntityRepository<Entities.Inscription, LogEventInfo>>();
     }
 
     [Fact]
@@ -40,15 +43,15 @@ public class InscriptionTransferredProcessorTests: InscriptionIndexerTestBase
         await _inscriptionIssuedProcessor.HandleEventAsync(logEventInfo, logEventContext);
         await SaveDataAsync();
 
-        var inscription = await Query.IssuedInscription(_issuedInscriptionRepository, ObjectMapper, new GetIssuedInscriptionInput()
+        var inscription = await Query.IssuedInscription(_issuedInscriptionRepository,_inscriptionRepository, ObjectMapper, new GetIssuedInscriptionInput()
         {
             ChainId = ChainId,
             Tick = inscriptionIssued.Tick
         });
-        inscription[0].Tick.ShouldBe(inscriptionIssued.Tick);
-        inscription[0].IssuedToAddress.ShouldBe(inscriptionIssued.To.ToBase58());
-        inscription[0].Symbol.ShouldBe(inscriptionIssued.Symbol);
-        inscription[0].Amt.ShouldBe(inscriptionIssued.Amt);
+        inscription.Items[0].Tick.ShouldBe(inscriptionIssued.Tick);
+        inscription.Items[0].IssuedToAddress.ShouldBe(inscriptionIssued.To.ToBase58());
+        inscription.Items[0].Symbol.ShouldBe(inscriptionIssued.Symbol);
+        inscription.Items[0].Amt.ShouldBe(inscriptionIssued.Amt);
         
         var inscriptionTransferred = new InscriptionTransferred
         {
@@ -79,12 +82,12 @@ public class InscriptionTransferredProcessorTests: InscriptionIndexerTestBase
         inscriptionTransfer[0].InscriptionInfo.ShouldBe(inscriptionTransferred.InscriptionInfo);
         inscriptionTransfer[0].Method.ShouldBe("Transfer");
         
-        inscription = await Query.IssuedInscription(_issuedInscriptionRepository, ObjectMapper, new GetIssuedInscriptionInput()
+        inscription = await Query.IssuedInscription(_issuedInscriptionRepository,_inscriptionRepository, ObjectMapper, new GetIssuedInscriptionInput()
         {
             ChainId = ChainId,
             Tick = inscriptionIssued.Tick
         });
-        inscription[0].TransactionCount.ShouldBe(2);
-        inscription[0].HolderCount.ShouldBe(1);
+        inscription.Items[0].TransactionCount.ShouldBe(2);
+        inscription.Items[0].HolderCount.ShouldBe(1);
     }
 }

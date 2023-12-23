@@ -13,4 +13,5 @@ public class IssuedInscriptionDto : GraphQLDto
     public int TransactionCount { get; set; }
     public bool IsCompleted { get; set; }
     public string IssuedTransactionId { get; set; }
+    public string Image { get; set; }
 }
