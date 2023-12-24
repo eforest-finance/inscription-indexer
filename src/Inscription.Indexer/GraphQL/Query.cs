@@ -84,13 +84,10 @@ public class Query
         {
             totalCount = (await issuedInscriptionRepository.CountAsync(Filter)).Count;
             
-            var inscriptionMustQuery = new List<Func<QueryContainerDescriptor<Entities.Inscription>, QueryContainer>>();
-            inscriptionMustQuery.Add(q => q.Ids(i => i.Values(issuedInscriptions.Item2.Select(i => IdGenerateHelper.GetId(_mainChainId, i.Tick)))));
-            QueryContainer inscriptionFilter(QueryContainerDescriptor<Entities.Inscription> f) => f.Bool(b => b.Must(inscriptionMustQuery));
-            var inscriptions = (await inscriptionRepository.GetListAsync(inscriptionFilter)).Item2.ToDictionary(o=>o.Tick, o=>o);
+            var images = await GetInscriptionImageAsync(inscriptionRepository, issuedInscriptions.Item2.Select(i => i.Tick).ToList());
             foreach (var issuedInscriptionDto in issuedInscriptionDtos)
             {
-                if (inscriptions.TryGetValue(issuedInscriptionDto.Tick, out var inscription) && inscription.CollectionExternalInfo.TryGetValue(_inscriptionImageKey, out var image))
+                if (images.TryGetValue(issuedInscriptionDto.Tick, out var image))
                 {
                     issuedInscriptionDto.Image = image;
                 }
@@ -101,11 +98,12 @@ public class Query
     }
 
     public static async Task<List<InscriptionTransferDto>> InscriptionTransfer(
-        [FromServices] IAElfIndexerClientEntityRepository<Entities.InscriptionTransfer, LogEventInfo> repository,
+        [FromServices] IAElfIndexerClientEntityRepository<Entities.InscriptionTransfer, LogEventInfo> transferRepository,
+        [FromServices] IAElfIndexerClientEntityRepository<Entities.Inscription, LogEventInfo> inscriptionRepository,
         [FromServices] IObjectMapper objectMapper, GetInscriptionTransferInput input)
     {
         input.Validate();
-        
+
         var mustQuery = new List<Func<QueryContainerDescriptor<Entities.InscriptionTransfer>, QueryContainer>>();
         if (!input.ChainId.IsNullOrWhiteSpace())
         {
@@ -115,11 +113,27 @@ public class Query
         QueryContainer Filter(QueryContainerDescriptor<Entities.InscriptionTransfer> f) =>
             f.Bool(b => b.Must(mustQuery));
 
-        var result = await repository.GetListAsync(Filter, sortExp: k => k.BlockTime,
+        var transfers = await transferRepository.GetListAsync(Filter, sortExp: k => k.BlockTime,
             sortType: SortOrder.Descending, limit: input.MaxResultCount, skip: input.SkipCount);
-        return objectMapper.Map<List<Entities.InscriptionTransfer>, List<InscriptionTransferDto>>(result.Item2);
+
+        var inscriptionTransferDtos =
+            objectMapper.Map<List<Entities.InscriptionTransfer>, List<InscriptionTransferDto>>(transfers.Item2);
+        if (inscriptionTransferDtos.Count > 0)
+        {
+            var images = await GetInscriptionImageAsync(inscriptionRepository,
+                inscriptionTransferDtos.Select(i => i.Tick).ToList());
+            foreach (var inscriptionTransferDto in inscriptionTransferDtos)
+            {
+                if (images.TryGetValue(inscriptionTransferDto.Tick, out var image))
+                {
+                    inscriptionTransferDto.InscriptionImage = image;
+                }
+            }
+        }
+
+        return inscriptionTransferDtos;
     }
-    
+
     public static async Task<SyncStateDto> SyncState(
         [FromServices] IClusterClient clusterClient, [FromServices] IAElfIndexerClientInfoProvider clientInfoProvider,
         [FromServices] IObjectMapper objectMapper, GetSyncStateDto input)
@@ -134,5 +148,25 @@ public class Query
         {
             ConfirmedBlockHeight = confirmedHeight
         };
+    }
+    
+    private static async Task<Dictionary<string,string>> GetInscriptionImageAsync(
+        IAElfIndexerClientEntityRepository<Entities.Inscription, LogEventInfo> inscriptionRepository,
+        List<string> ticks)
+    {
+        var inscriptionMustQuery = new List<Func<QueryContainerDescriptor<Entities.Inscription>, QueryContainer>>();
+        inscriptionMustQuery.Add(q => q.Ids(i => i.Values(ticks.Select(i => IdGenerateHelper.GetId(_mainChainId, i)))));
+        QueryContainer inscriptionFilter(QueryContainerDescriptor<Entities.Inscription> f) => f.Bool(b => b.Must(inscriptionMustQuery));
+        var inscriptions = await inscriptionRepository.GetListAsync(inscriptionFilter);
+        var result = new Dictionary<string, string>();
+        foreach (var inscription in inscriptions.Item2)
+        {
+            if (inscription.CollectionExternalInfo.TryGetValue(_inscriptionImageKey, out var image))
+            {
+                result.Add(inscription.Tick, image);
+            }
+        }
+
+        return result;
     }
 }

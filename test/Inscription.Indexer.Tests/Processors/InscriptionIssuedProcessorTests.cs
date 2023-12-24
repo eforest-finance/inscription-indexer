@@ -88,7 +88,7 @@ public class InscriptionIssuedProcessorTests: InscriptionIndexerTestBase
         inscription.Items[0].TransactionCount.ShouldBe(1);
         inscription.Items[0].Image.ShouldBe("inscriptionimage");
         
-        var inscriptionTransfer = await Query.InscriptionTransfer(_transferRepository, ObjectMapper, new GetInscriptionTransferInput()
+        var inscriptionTransfer = await Query.InscriptionTransfer(_transferRepository,_inscriptionRepository, ObjectMapper, new GetInscriptionTransferInput()
         {
             ChainId = ChainId,
         });
@@ -99,7 +99,7 @@ public class InscriptionIssuedProcessorTests: InscriptionIndexerTestBase
         inscriptionTransfer[0].Amt.ShouldBe(inscriptionIssued.Amt);
         inscriptionTransfer[0].InscriptionInfo.ShouldBe(inscriptionIssued.InscriptionInfo);
         inscriptionTransfer[0].Method.ShouldBe("Deploy");
-        
-        
+        inscriptionTransfer[0].InscriptionImage.ShouldBe("inscriptionimage");
+        inscriptionTransfer[0].Number.ShouldBe(0);
     }
 }
