@@ -60,5 +60,7 @@ public class InscriptionCreatedProcessorTests : InscriptionIndexerTestBase
         inscription[0].CollectionExternalInfo[0].Value.ShouldBe("value1");
         inscription[0].ItemExternalInfo[0].Key.ShouldBe("key2");
         inscription[0].ItemExternalInfo[0].Value.ShouldBe("value2");
+        inscription[0].IssueChainId.ShouldBe(inscriptionCreated.IssueChainId);
+        inscription[0].Issuer.ShouldBe(inscriptionCreated.Issuer.ToBase58());
     }
 }

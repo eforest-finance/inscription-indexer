@@ -4,6 +4,8 @@ public class InscriptionDto : GraphQLDto
 {
     public string Tick { get; set; }
     public long TotalSupply { get; set; }
+    public string Issuer { get; set; }
+    public int IssueChainId { get; set; }
     public List<ExternalInfoDto> CollectionExternalInfo { get; set; } = new();
     public List<ExternalInfoDto> ItemExternalInfo { get; set; } = new();
     public string Owner { get; set; }
