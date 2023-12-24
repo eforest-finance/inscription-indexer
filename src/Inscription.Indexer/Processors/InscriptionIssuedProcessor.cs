@@ -1,6 +1,6 @@
 using AElfIndexer.Client.Handlers;
 using AElfIndexer.Grains.State.Client;
-using Forest.Inscription;
+using Forest.Contracts.Inscription;
 using Microsoft.Extensions.Logging;
 
 namespace Inscription.Indexer.Processors;
@@ -30,6 +30,6 @@ public class InscriptionIssuedProcessor : InscriptionProcessorBase<InscriptionIs
         
         await AddInscriptionTransferAsync(context, "Deploy", eventValue.To.ToBase58(), eventValue.To.ToBase58(),
             eventValue.Tick,
-            eventValue.Symbol, eventValue.Amt, eventValue.InscriptionInfo);
+            eventValue.Amt, eventValue.InscriptionInfo);
     }
 }

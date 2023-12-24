@@ -1,6 +1,6 @@
 using AElfIndexer.Client;
 using AElfIndexer.Grains.State.Client;
-using Forest.Inscription;
+using Forest.Contracts.Inscription;
 using Inscription.Indexer.GraphQL;
 using Shouldly;
 using Xunit;
@@ -37,14 +37,10 @@ public class InscriptionTransferredProcessorTests : InscriptionIndexerTestBase
         var inscriptionCreated = new InscriptionCreated
         {
             Tick = "Tick",
-            Decimals = 0,
             Deployer = TestAddress,
             Issuer = TestAddress,
             Limit = 10,
             Owner = TestAddress,
-            CollectionSymbol = "CollectionSymbol",
-            IsBurnable = false,
-            ItemSymbol = "ItemSymbol",
             TotalSupply = 100000,
             IssueChainId = 1,
             CollectionExternalInfo = new ExternalInfos
@@ -67,8 +63,8 @@ public class InscriptionTransferredProcessorTests : InscriptionIndexerTestBase
         {
             Tick = "Tick",
             To = TestAddress,
-            Symbol = "Symbol",
-            Amt = 1000
+            Amt = 1000,
+            InscriptionInfo = "InscriptionInfo"
         };
 
         logEventInfo = GenerateLogEventInfo(inscriptionIssued);
@@ -85,7 +81,6 @@ public class InscriptionTransferredProcessorTests : InscriptionIndexerTestBase
             });
         inscription.Items[0].Tick.ShouldBe(inscriptionIssued.Tick);
         inscription.Items[0].IssuedToAddress.ShouldBe(inscriptionIssued.To.ToBase58());
-        inscription.Items[0].Symbol.ShouldBe(inscriptionIssued.Symbol);
         inscription.Items[0].Amt.ShouldBe(inscriptionIssued.Amt);
 
         var inscriptionTransferred = new InscriptionTransferred
@@ -93,7 +88,6 @@ public class InscriptionTransferredProcessorTests : InscriptionIndexerTestBase
             Tick = "Tick",
             From = TestAddress,
             To = TestAddress,
-            Symbol = "Symbol",
             Amt = 100,
             InscriptionInfo = "InscriptionInfo"
         };
@@ -113,7 +107,6 @@ public class InscriptionTransferredProcessorTests : InscriptionIndexerTestBase
         inscriptionTransfer[0].Tick.ShouldBe(inscriptionTransferred.Tick);
         inscriptionTransfer[0].FromAddress.ShouldBe(inscriptionTransferred.From.ToBase58());
         inscriptionTransfer[0].ToAddress.ShouldBe(inscriptionTransferred.To.ToBase58());
-        inscriptionTransfer[0].Symbol.ShouldBe(inscriptionTransferred.Symbol);
         inscriptionTransfer[0].Amt.ShouldBe(inscriptionTransferred.Amt);
         inscriptionTransfer[0].InscriptionInfo.ShouldBe(inscriptionTransferred.InscriptionInfo);
         inscriptionTransfer[0].Method.ShouldBe("Transfer");

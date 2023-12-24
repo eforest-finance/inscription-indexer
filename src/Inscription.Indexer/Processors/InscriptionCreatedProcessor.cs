@@ -1,6 +1,6 @@
 using AElfIndexer.Client.Handlers;
 using AElfIndexer.Grains.State.Client;
-using Forest.Inscription;
+using Forest.Contracts.Inscription;
 using Microsoft.Extensions.Logging;
 
 namespace Inscription.Indexer.Processors;

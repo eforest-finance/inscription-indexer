@@ -2,14 +2,8 @@ namespace Inscription.Indexer.GraphQL;
 
 public class InscriptionDto : GraphQLDto
 {
-    public string CollectionSymbol { get; set; }
-    public string ItemSymbol { get; set; }
     public string Tick { get; set; }
     public long TotalSupply { get; set; }
-    public int Decimals { get; set; }
-    public string Issuer { get; set; }
-    public bool IsBurnable { get; set; }
-    public int IssueChainId { get; set; }
     public List<ExternalInfoDto> CollectionExternalInfo { get; set; } = new();
     public List<ExternalInfoDto> ItemExternalInfo { get; set; } = new();
     public string Owner { get; set; }

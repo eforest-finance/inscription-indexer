@@ -16,8 +16,6 @@ public class InscriptionTransfer : InscriptionIndexerEntity<string>, IIndexBuild
     [Keyword]
     public string InscriptionInfo { get; set; }
     [Keyword]
-    public string Symbol { get; set; }
-    [Keyword]
     public string Tick { get; set; }
     public long Amt { get; set; }
     public long Number { get; set; }

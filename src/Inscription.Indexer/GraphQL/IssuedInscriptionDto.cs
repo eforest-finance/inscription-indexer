@@ -2,7 +2,6 @@ namespace Inscription.Indexer.GraphQL;
 
 public class IssuedInscriptionDto : GraphQLDto
 {
-    public string Symbol { get; set; }
     public long Amt { get; set; }
     public string Tick { get; set; }
     public string IssuedToAddress { get; set; }

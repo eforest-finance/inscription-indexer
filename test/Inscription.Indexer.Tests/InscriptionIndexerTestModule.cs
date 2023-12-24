@@ -9,7 +9,6 @@ using AElfIndexer.Client.Providers;
 using AElfIndexer.Grains.Grain.Client;
 using Elasticsearch.Net;
 using Inscription.Indexer.Orleans.TestBase;
-using Inscription.Indexer.TestBase;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;

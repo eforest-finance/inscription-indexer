@@ -11,7 +11,7 @@
 using System.Collections.Generic;
 using aelf = global::AElf.CSharp.Core;
 
-namespace Forest.Inscription {
+namespace Forest.Contracts.Inscription {
 
   #region Events
   public partial class InscriptionCreated : aelf::IEvent<InscriptionCreated>
@@ -27,13 +27,9 @@ namespace Forest.Inscription {
     {
       return new InscriptionCreated
       {
-        CollectionSymbol = CollectionSymbol,
-        ItemSymbol = ItemSymbol,
         Tick = Tick,
         TotalSupply = TotalSupply,
-        Decimals = Decimals,
         Issuer = Issuer,
-        IsBurnable = IsBurnable,
         IssueChainId = IssueChainId,
         CollectionExternalInfo = CollectionExternalInfo,
         ItemExternalInfo = ItemExternalInfo,
@@ -57,7 +53,6 @@ namespace Forest.Inscription {
     {
       return new InscriptionIssued
       {
-        Symbol = Symbol,
         Tick = Tick,
         Amt = Amt,
         To = To,
@@ -79,10 +74,6 @@ namespace Forest.Inscription {
       new InscriptionTransferred
       {
         To = To
-      },
-      new InscriptionTransferred
-      {
-        Symbol = Symbol
       },
       new InscriptionTransferred
       {

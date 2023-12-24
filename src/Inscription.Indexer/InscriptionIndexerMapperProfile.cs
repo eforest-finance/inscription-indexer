@@ -1,7 +1,7 @@
 ﻿using AElf.Types;
 using AElfIndexer.Client.Handlers;
 using AutoMapper;
-using Forest.Inscription;
+using Forest.Contracts.Inscription;
 using Inscription.Indexer.GraphQL;
 
 namespace Inscription.Indexer;

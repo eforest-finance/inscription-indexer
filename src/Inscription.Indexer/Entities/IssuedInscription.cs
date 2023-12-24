@@ -5,8 +5,6 @@ namespace Inscription.Indexer.Entities;
 
 public class IssuedInscription : InscriptionIndexerEntity<string>, IIndexBuild
 {
-    [Keyword]
-    public string Symbol { get; set; }
     public long Amt { get; set; }
     [Keyword]
     public string Tick { get; set; }

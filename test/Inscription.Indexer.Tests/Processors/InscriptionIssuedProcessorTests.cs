@@ -1,6 +1,6 @@
 using AElfIndexer.Client;
 using AElfIndexer.Grains.State.Client;
-using Forest.Inscription;
+using Forest.Contracts.Inscription;
 using Inscription.Indexer.GraphQL;
 using Shouldly;
 using Xunit;
@@ -34,14 +34,10 @@ public class InscriptionIssuedProcessorTests: InscriptionIndexerTestBase
         var inscriptionCreated = new InscriptionCreated
         {
             Tick = "Tick",
-            Decimals = 0,
             Deployer = TestAddress,
             Issuer = TestAddress,
             Limit = 10,
             Owner = TestAddress,
-            CollectionSymbol = "CollectionSymbol",
-            IsBurnable = false,
-            ItemSymbol = "ItemSymbol",
             TotalSupply = 100000,
             IssueChainId = 1,
             CollectionExternalInfo = new ExternalInfos
@@ -64,7 +60,6 @@ public class InscriptionIssuedProcessorTests: InscriptionIndexerTestBase
         {
             Tick = "Tick",
             To = TestAddress,
-            Symbol = "Symbol",
             Amt = 1000,
             InscriptionInfo = "InscriptionInfo"
         };
@@ -83,7 +78,6 @@ public class InscriptionIssuedProcessorTests: InscriptionIndexerTestBase
         inscription.TotalCount.ShouldBe(1);
         inscription.Items[0].Tick.ShouldBe(inscriptionIssued.Tick);
         inscription.Items[0].IssuedToAddress.ShouldBe(inscriptionIssued.To.ToBase58());
-        inscription.Items[0].Symbol.ShouldBe(inscriptionIssued.Symbol);
         inscription.Items[0].Amt.ShouldBe(inscriptionIssued.Amt);
         inscription.Items[0].TransactionCount.ShouldBe(1);
         inscription.Items[0].Image.ShouldBe("inscriptionimage");
@@ -95,7 +89,6 @@ public class InscriptionIssuedProcessorTests: InscriptionIndexerTestBase
         inscriptionTransfer[0].Tick.ShouldBe(inscriptionIssued.Tick);
         inscriptionTransfer[0].FromAddress.ShouldBe(inscriptionIssued.To.ToBase58());
         inscriptionTransfer[0].ToAddress.ShouldBe(inscriptionIssued.To.ToBase58());
-        inscriptionTransfer[0].Symbol.ShouldBe(inscriptionIssued.Symbol);
         inscriptionTransfer[0].Amt.ShouldBe(inscriptionIssued.Amt);
         inscriptionTransfer[0].InscriptionInfo.ShouldBe(inscriptionIssued.InscriptionInfo);
         inscriptionTransfer[0].Method.ShouldBe("Deploy");

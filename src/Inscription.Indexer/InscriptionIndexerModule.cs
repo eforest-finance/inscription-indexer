@@ -4,7 +4,6 @@ using AElfIndexer.Grains.State.Client;
 using Inscription.Indexer.GraphQL;
 using Inscription.Indexer.Processors;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Volo.Abp.Modularity;
 
 namespace Inscription.Indexer;

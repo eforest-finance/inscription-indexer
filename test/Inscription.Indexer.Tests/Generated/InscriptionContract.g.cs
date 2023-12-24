@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Forest.Inscription {
+namespace Forest.Contracts.Inscription {
 
   /// <summary>Holder for reflection information generated from inscription_contract.proto</summary>
   public static partial class InscriptionContractReflection {
@@ -28,60 +28,88 @@ namespace Forest.Inscription {
             "bGYvY29yZS5wcm90bxoSYWVsZi9vcHRpb25zLnByb3RvGgthY3MxMi5wcm90",
             "bxoKYWNzMi5wcm90bxoUYXV0aG9yaXR5X2luZm8ucHJvdG8aHmdvb2dsZS9w",
             "cm90b2J1Zi93cmFwcGVycy5wcm90bxobZ29vZ2xlL3Byb3RvYnVmL2VtcHR5",
-            "LnByb3RvGhR0b2tlbl9jb250cmFjdC5wcm90byIRCg9Jbml0aWFsaXplSW5w",
-            "dXQifgoWRGVwbG95SW5zY3JpcHRpb25JbnB1dBITCgtzZWVkX3N5bWJvbBgB",
-            "IAEoCRIMCgR0aWNrGAIgASgJEhYKDmlzc3VlX2NoYWluX2lkGAMgASgFEgsK",
-            "A21heBgEIAEoAxINCgVsaW1pdBgFIAEoAxINCgVpbWFnZRgGIAEoCSIlChVJ",
-            "c3N1ZUluc2NyaXB0aW9uSW5wdXQSDAoEdGljaxgBIAEoCSIrCg5JbnNjcmli",
-            "ZWRJbnB1dBIMCgR0aWNrGAEgASgJEgsKA2FtdBgCIAEoAyImCghIYXNoTGlz",
-            "dBIaCgZ2YWx1ZXMYASADKAsyCi5hZWxmLkhhc2giLAoLQWRkcmVzc0xpc3QS",
-            "HQoGdmFsdWVzGAEgAygLMg0uYWVsZi5BZGRyZXNzIpADChJJbnNjcmlwdGlv",
-            "bkNyZWF0ZWQSGQoRY29sbGVjdGlvbl9zeW1ib2wYASABKAkSEwoLaXRlbV9z",
-            "eW1ib2wYAiABKAkSDAoEdGljaxgDIAEoCRIUCgx0b3RhbF9zdXBwbHkYBCAB",
-            "KAMSEAoIZGVjaW1hbHMYBSABKAUSHQoGaXNzdWVyGAYgASgLMg0uYWVsZi5B",
-            "ZGRyZXNzEhMKC2lzX2J1cm5hYmxlGAcgASgIEhYKDmlzc3VlX2NoYWluX2lk",
-            "GAggASgFEjwKGGNvbGxlY3Rpb25fZXh0ZXJuYWxfaW5mbxgJIAEoCzIaLklu",
-            "c2NyaXB0aW9uLkV4dGVybmFsSW5mb3MSNgoSaXRlbV9leHRlcm5hbF9pbmZv",
-            "GAogASgLMhouSW5zY3JpcHRpb24uRXh0ZXJuYWxJbmZvcxIcCgVvd25lchgL",
-            "IAEoCzINLmFlbGYuQWRkcmVzcxINCgVsaW1pdBgMIAEoAxIfCghkZXBsb3ll",
-            "chgNIAEoCzINLmFlbGYuQWRkcmVzczoEoLsYASJzCg1FeHRlcm5hbEluZm9z",
-            "EjQKBXZhbHVlGAEgAygLMiUuSW5zY3JpcHRpb24uRXh0ZXJuYWxJbmZvcy5W",
-            "YWx1ZUVudHJ5GiwKClZhbHVlRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVl",
-            "GAIgASgJOgI4ASJ5ChFJbnNjcmlwdGlvbklzc3VlZBIOCgZzeW1ib2wYASAB",
-            "KAkSDAoEdGljaxgCIAEoCRILCgNhbXQYAyABKAMSGQoCdG8YBCABKAsyDS5h",
-            "ZWxmLkFkZHJlc3MSGAoQaW5zY3JpcHRpb25faW5mbxgFIAEoCToEoLsYASK3",
-            "AQoWSW5zY3JpcHRpb25UcmFuc2ZlcnJlZBIiCgRmcm9tGAEgASgLMg0uYWVs",
-            "Zi5BZGRyZXNzQgWIj/UBARIgCgJ0bxgCIAEoCzINLmFlbGYuQWRkcmVzc0IF",
-            "iI/1AQESFQoGc3ltYm9sGAMgASgJQgWIj/UBARITCgR0aWNrGAQgASgJQgWI",
-            "j/UBARILCgNhbXQYBSABKAMSGAoQaW5zY3JpcHRpb25faW5mbxgGIAEoCToE",
-            "oLsYASo6CgpTeW1ib2xUeXBlEg8KC1VOU1BFQ0lGSUVEEAASEgoOTkZUX0NP",
-            "TExFQ1RJT04QARIHCgNORlQQAjLBBAoTSW5zY3JpcHRpb25Db250cmFjdBJE",
-            "CgpJbml0aWFsaXplEhwuSW5zY3JpcHRpb24uSW5pdGlhbGl6ZUlucHV0GhYu",
-            "Z29vZ2xlLnByb3RvYnVmLkVtcHR5IgASUgoRRGVwbG95SW5zY3JpcHRpb24S",
-            "Iy5JbnNjcmlwdGlvbi5EZXBsb3lJbnNjcmlwdGlvbklucHV0GhYuZ29vZ2xl",
-            "LnByb3RvYnVmLkVtcHR5IgASUAoQSXNzdWVJbnNjcmlwdGlvbhIiLkluc2Ny",
-            "aXB0aW9uLklzc3VlSW5zY3JpcHRpb25JbnB1dBoWLmdvb2dsZS5wcm90b2J1",
-            "Zi5FbXB0eSIAEkEKCEluc2NyaWJlEhsuSW5zY3JpcHRpb24uSW5zY3JpYmVk",
-            "SW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABJVChFHZXRJbnNjcmli",
-            "ZWRMaW1pdBIcLmdvb2dsZS5wcm90b2J1Zi5TdHJpbmdWYWx1ZRobLmdvb2ds",
-            "ZS5wcm90b2J1Zi5JbnQ2NFZhbHVlIgWIifcBARJTChJHZXREaXN0cmlidXRv",
-            "ckxpc3QSHC5nb29nbGUucHJvdG9idWYuU3RyaW5nVmFsdWUaGC5JbnNjcmlw",
-            "dGlvbi5BZGRyZXNzTGlzdCIFiIn3AQEaT7LM9gErRm9yZXN0Lkluc2NyaXB0",
-            "aW9uLkluc2NyaXB0aW9uQ29udHJhY3RTdGF0ZcrK9gELYWNzMTIucHJvdG/K",
-            "yvYBCmFjczIucHJvdG9CFaoCEkZvcmVzdC5JbnNjcmlwdGlvbmIGcHJvdG8z"));
+            "LnByb3RvGhR0b2tlbl9jb250cmFjdC5wcm90byIvCg9Jbml0aWFsaXplSW5w",
+            "dXQSHAoFYWRtaW4YASABKAsyDS5hZWxmLkFkZHJlc3MiZgoWRGVwbG95SW5z",
+            "Y3JpcHRpb25JbnB1dBITCgtzZWVkX3N5bWJvbBgBIAEoCRIMCgR0aWNrGAIg",
+            "ASgJEgsKA21heBgDIAEoAxINCgVsaW1pdBgEIAEoAxINCgVpbWFnZRgFIAEo",
+            "CSIlChVJc3N1ZUluc2NyaXB0aW9uSW5wdXQSDAoEdGljaxgBIAEoCSIrCg5J",
+            "bnNjcmliZWRJbnB1dBIMCgR0aWNrGAEgASgJEgsKA2FtdBgCIAEoAyImCghI",
+            "YXNoTGlzdBIaCgZ2YWx1ZXMYASADKAsyCi5hZWxmLkhhc2giLAoLQWRkcmVz",
+            "c0xpc3QSHQoGdmFsdWVzGAEgAygLMg0uYWVsZi5BZGRyZXNzIksKF0Rpc3Ry",
+            "aWJ1dG9yc0JhbGFuY2VMaXN0EjAKBnZhbHVlcxgBIAMoCzIgLkluc2NyaXB0",
+            "aW9uLkRpc3RyaWJ1dG9yc0JhbGFuY2UiSgoTRGlzdHJpYnV0b3JzQmFsYW5j",
+            "ZRIiCgtkaXN0cmlidXRvchgBIAEoCzINLmFlbGYuQWRkcmVzcxIPCgdiYWxh",
+            "bmNlGAIgASgDIlYKFURlcGxveUluc2NyaXB0aW9uSW5mbxIJCgFwGAEgASgJ",
+            "EgoKAm9wGAIgASgJEgwKBHRpY2sYAyABKAkSCwoDbWF4GAQgASgJEgsKA2xp",
+            "bRgFIAEoCSJHChNNaW50SW5zY3JpcHRpb25JbmZvEgkKAXAYASABKAkSCgoC",
+            "b3AYAiABKAkSDAoEdGljaxgDIAEoCRILCgNhbXQYBCABKAkiWAocQ2hlY2tE",
+            "aXN0cmlidXRvckJhbGFuY2VJbnB1dBIdCgZzZW5kZXIYASABKAsyDS5hZWxm",
+            "LkFkZHJlc3MSDAoEdGljaxgCIAEoCRILCgNhbXQYAyABKAMiuQIKEkluc2Ny",
+            "aXB0aW9uQ3JlYXRlZBIMCgR0aWNrGAMgASgJEhQKDHRvdGFsX3N1cHBseRgE",
+            "IAEoAxIdCgZpc3N1ZXIYBiABKAsyDS5hZWxmLkFkZHJlc3MSFgoOaXNzdWVf",
+            "Y2hhaW5faWQYCCABKAUSPAoYY29sbGVjdGlvbl9leHRlcm5hbF9pbmZvGAkg",
+            "ASgLMhouSW5zY3JpcHRpb24uRXh0ZXJuYWxJbmZvcxI2ChJpdGVtX2V4dGVy",
+            "bmFsX2luZm8YCiABKAsyGi5JbnNjcmlwdGlvbi5FeHRlcm5hbEluZm9zEhwK",
+            "BW93bmVyGAsgASgLMg0uYWVsZi5BZGRyZXNzEg0KBWxpbWl0GAwgASgDEh8K",
+            "CGRlcGxveWVyGA0gASgLMg0uYWVsZi5BZGRyZXNzOgSguxgBInMKDUV4dGVy",
+            "bmFsSW5mb3MSNAoFdmFsdWUYASADKAsyJS5JbnNjcmlwdGlvbi5FeHRlcm5h",
+            "bEluZm9zLlZhbHVlRW50cnkaLAoKVmFsdWVFbnRyeRILCgNrZXkYASABKAkS",
+            "DQoFdmFsdWUYAiABKAk6AjgBImkKEUluc2NyaXB0aW9uSXNzdWVkEgwKBHRp",
+            "Y2sYAiABKAkSCwoDYW10GAMgASgDEhkKAnRvGAQgASgLMg0uYWVsZi5BZGRy",
+            "ZXNzEhgKEGluc2NyaXB0aW9uX2luZm8YBSABKAk6BKC7GAEioAEKFkluc2Ny",
+            "aXB0aW9uVHJhbnNmZXJyZWQSIgoEZnJvbRgBIAEoCzINLmFlbGYuQWRkcmVz",
+            "c0IFiI/1AQESIAoCdG8YAiABKAsyDS5hZWxmLkFkZHJlc3NCBYiP9QEBEhMK",
+            "BHRpY2sYBCABKAlCBYiP9QEBEgsKA2FtdBgFIAEoAxIYChBpbnNjcmlwdGlv",
+            "bl9pbmZvGAYgASgJOgSguxgBKjoKClN5bWJvbFR5cGUSDwoLVU5TUEVDSUZJ",
+            "RUQQABISCg5ORlRfQ09MTEVDVElPThABEgcKA05GVBACMo4KChNJbnNjcmlw",
+            "dGlvbkNvbnRyYWN0EkQKCkluaXRpYWxpemUSHC5JbnNjcmlwdGlvbi5Jbml0",
+            "aWFsaXplSW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABI2CgtDaGFu",
+            "Z2VBZG1pbhINLmFlbGYuQWRkcmVzcxoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0",
+            "eSIAElIKEURlcGxveUluc2NyaXB0aW9uEiMuSW5zY3JpcHRpb24uRGVwbG95",
+            "SW5zY3JpcHRpb25JbnB1dBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAElAK",
+            "EElzc3VlSW5zY3JpcHRpb24SIi5JbnNjcmlwdGlvbi5Jc3N1ZUluc2NyaXB0",
+            "aW9uSW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABJBCghJbnNjcmli",
+            "ZRIbLkluc2NyaXB0aW9uLkluc2NyaWJlZElucHV0GhYuZ29vZ2xlLnByb3Rv",
+            "YnVmLkVtcHR5IgASSAoPTWludEluc2NyaXB0aW9uEhsuSW5zY3JpcHRpb24u",
+            "SW5zY3JpYmVkSW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABJMChNT",
+            "ZXREaXN0cmlidXRvckNvdW50EhsuZ29vZ2xlLnByb3RvYnVmLkludDMyVmFs",
+            "dWUaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABJICg9TZXRJc3N1ZUNoYWlu",
+            "SWQSGy5nb29nbGUucHJvdG9idWYuSW50MzJWYWx1ZRoWLmdvb2dsZS5wcm90",
+            "b2J1Zi5FbXB0eSIAEjgKCEdldEFkbWluEhYuZ29vZ2xlLnByb3RvYnVmLkVt",
+            "cHR5Gg0uYWVsZi5BZGRyZXNzIgWIifcBARJVChFHZXRJbnNjcmliZWRMaW1p",
+            "dBIcLmdvb2dsZS5wcm90b2J1Zi5TdHJpbmdWYWx1ZRobLmdvb2dsZS5wcm90",
+            "b2J1Zi5JbnQ2NFZhbHVlIgWIifcBARJTChJHZXREaXN0cmlidXRvckxpc3QS",
+            "HC5nb29nbGUucHJvdG9idWYuU3RyaW5nVmFsdWUaGC5JbnNjcmlwdGlvbi5B",
+            "ZGRyZXNzTGlzdCIFiIn3AQESYgoVR2V0RGlzdHJpYnV0b3JCYWxhbmNlEhwu",
+            "Z29vZ2xlLnByb3RvYnVmLlN0cmluZ1ZhbHVlGiQuSW5zY3JpcHRpb24uRGlz",
+            "dHJpYnV0b3JzQmFsYW5jZUxpc3QiBYiJ9wEBElEKE0dldERpc3RyaWJ1dG9y",
+            "Q291bnQSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaGy5nb29nbGUucHJvdG9i",
+            "dWYuSW50MzJWYWx1ZSIFiIn3AQESTQoPR2V0SXNzdWVDaGFpbklkEhYuZ29v",
+            "Z2xlLnByb3RvYnVmLkVtcHR5GhsuZ29vZ2xlLnByb3RvYnVmLkludDMyVmFs",
+            "dWUiBYiJ9wEBEmcKF0NoZWNrRGlzdHJpYnV0b3JCYWxhbmNlEikuSW5zY3Jp",
+            "cHRpb24uQ2hlY2tEaXN0cmlidXRvckJhbGFuY2VJbnB1dBoaLmdvb2dsZS5w",
+            "cm90b2J1Zi5Cb29sVmFsdWUiBYiJ9wEBGlmyzPYBNUZvcmVzdC5Db250cmFj",
+            "dHMuSW5zY3JpcHRpb24uSW5zY3JpcHRpb25Db250cmFjdFN0YXRlysr2AQth",
+            "Y3MxMi5wcm90b8rK9gEKYWNzMi5wcm90b0IfqgIcRm9yZXN0LkNvbnRyYWN0",
+            "cy5JbnNjcmlwdGlvbmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::AElf.Types.CoreReflection.Descriptor, global::AElf.OptionsReflection.Descriptor, global::AElf.Standards.ACS12.Acs12Reflection.Descriptor, global::AElf.Standards.ACS2.Acs2Reflection.Descriptor, global::AuthorityInfoReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::AElf.Contracts.MultiToken.TokenContractReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Forest.Inscription.SymbolType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Inscription.InitializeInput), global::Forest.Inscription.InitializeInput.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Inscription.DeployInscriptionInput), global::Forest.Inscription.DeployInscriptionInput.Parser, new[]{ "SeedSymbol", "Tick", "IssueChainId", "Max", "Limit", "Image" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Inscription.IssueInscriptionInput), global::Forest.Inscription.IssueInscriptionInput.Parser, new[]{ "Tick" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Inscription.InscribedInput), global::Forest.Inscription.InscribedInput.Parser, new[]{ "Tick", "Amt" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Inscription.HashList), global::Forest.Inscription.HashList.Parser, new[]{ "Values" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Inscription.AddressList), global::Forest.Inscription.AddressList.Parser, new[]{ "Values" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Inscription.InscriptionCreated), global::Forest.Inscription.InscriptionCreated.Parser, new[]{ "CollectionSymbol", "ItemSymbol", "Tick", "TotalSupply", "Decimals", "Issuer", "IsBurnable", "IssueChainId", "CollectionExternalInfo", "ItemExternalInfo", "Owner", "Limit", "Deployer" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Inscription.ExternalInfos), global::Forest.Inscription.ExternalInfos.Parser, new[]{ "Value" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Inscription.InscriptionIssued), global::Forest.Inscription.InscriptionIssued.Parser, new[]{ "Symbol", "Tick", "Amt", "To", "InscriptionInfo" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Inscription.InscriptionTransferred), global::Forest.Inscription.InscriptionTransferred.Parser, new[]{ "From", "To", "Symbol", "Tick", "Amt", "InscriptionInfo" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Forest.Contracts.Inscription.SymbolType), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Contracts.Inscription.InitializeInput), global::Forest.Contracts.Inscription.InitializeInput.Parser, new[]{ "Admin" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Contracts.Inscription.DeployInscriptionInput), global::Forest.Contracts.Inscription.DeployInscriptionInput.Parser, new[]{ "SeedSymbol", "Tick", "Max", "Limit", "Image" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Contracts.Inscription.IssueInscriptionInput), global::Forest.Contracts.Inscription.IssueInscriptionInput.Parser, new[]{ "Tick" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Contracts.Inscription.InscribedInput), global::Forest.Contracts.Inscription.InscribedInput.Parser, new[]{ "Tick", "Amt" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Contracts.Inscription.HashList), global::Forest.Contracts.Inscription.HashList.Parser, new[]{ "Values" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Contracts.Inscription.AddressList), global::Forest.Contracts.Inscription.AddressList.Parser, new[]{ "Values" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Contracts.Inscription.DistributorsBalanceList), global::Forest.Contracts.Inscription.DistributorsBalanceList.Parser, new[]{ "Values" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Contracts.Inscription.DistributorsBalance), global::Forest.Contracts.Inscription.DistributorsBalance.Parser, new[]{ "Distributor", "Balance" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Contracts.Inscription.DeployInscriptionInfo), global::Forest.Contracts.Inscription.DeployInscriptionInfo.Parser, new[]{ "P", "Op", "Tick", "Max", "Lim" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Contracts.Inscription.MintInscriptionInfo), global::Forest.Contracts.Inscription.MintInscriptionInfo.Parser, new[]{ "P", "Op", "Tick", "Amt" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Contracts.Inscription.CheckDistributorBalanceInput), global::Forest.Contracts.Inscription.CheckDistributorBalanceInput.Parser, new[]{ "Sender", "Tick", "Amt" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Contracts.Inscription.InscriptionCreated), global::Forest.Contracts.Inscription.InscriptionCreated.Parser, new[]{ "Tick", "TotalSupply", "Issuer", "IssueChainId", "CollectionExternalInfo", "ItemExternalInfo", "Owner", "Limit", "Deployer" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Contracts.Inscription.ExternalInfos), global::Forest.Contracts.Inscription.ExternalInfos.Parser, new[]{ "Value" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Contracts.Inscription.InscriptionIssued), global::Forest.Contracts.Inscription.InscriptionIssued.Parser, new[]{ "Tick", "Amt", "To", "InscriptionInfo" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Contracts.Inscription.InscriptionTransferred), global::Forest.Contracts.Inscription.InscriptionTransferred.Parser, new[]{ "From", "To", "Tick", "Amt", "InscriptionInfo" }, null, null, null, null)
           }));
     }
     #endregion
@@ -111,7 +139,7 @@ namespace Forest.Inscription {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Forest.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Forest.Contracts.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -131,6 +159,7 @@ namespace Forest.Inscription {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InitializeInput(InitializeInput other) : this() {
+      admin_ = other.admin_ != null ? other.admin_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -138,6 +167,18 @@ namespace Forest.Inscription {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InitializeInput Clone() {
       return new InitializeInput(this);
+    }
+
+    /// <summary>Field number for the "admin" field.</summary>
+    public const int AdminFieldNumber = 1;
+    private global::AElf.Types.Address admin_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::AElf.Types.Address Admin {
+      get { return admin_; }
+      set {
+        admin_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -155,6 +196,7 @@ namespace Forest.Inscription {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (!object.Equals(Admin, other.Admin)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -162,6 +204,7 @@ namespace Forest.Inscription {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (admin_ != null) hash ^= Admin.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -180,6 +223,10 @@ namespace Forest.Inscription {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (admin_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Admin);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -190,6 +237,10 @@ namespace Forest.Inscription {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (admin_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Admin);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -200,6 +251,9 @@ namespace Forest.Inscription {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (admin_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Admin);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -211,6 +265,12 @@ namespace Forest.Inscription {
     public void MergeFrom(InitializeInput other) {
       if (other == null) {
         return;
+      }
+      if (other.admin_ != null) {
+        if (admin_ == null) {
+          Admin = new global::AElf.Types.Address();
+        }
+        Admin.MergeFrom(other.Admin);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -227,6 +287,13 @@ namespace Forest.Inscription {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 10: {
+            if (admin_ == null) {
+              Admin = new global::AElf.Types.Address();
+            }
+            input.ReadMessage(Admin);
+            break;
+          }
         }
       }
     #endif
@@ -242,6 +309,13 @@ namespace Forest.Inscription {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 10: {
+            if (admin_ == null) {
+              Admin = new global::AElf.Types.Address();
+            }
+            input.ReadMessage(Admin);
+            break;
+          }
         }
       }
     }
@@ -263,7 +337,7 @@ namespace Forest.Inscription {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Forest.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Forest.Contracts.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -285,7 +359,6 @@ namespace Forest.Inscription {
     public DeployInscriptionInput(DeployInscriptionInput other) : this() {
       seedSymbol_ = other.seedSymbol_;
       tick_ = other.tick_;
-      issueChainId_ = other.issueChainId_;
       max_ = other.max_;
       limit_ = other.limit_;
       image_ = other.image_;
@@ -322,20 +395,8 @@ namespace Forest.Inscription {
       }
     }
 
-    /// <summary>Field number for the "issue_chain_id" field.</summary>
-    public const int IssueChainIdFieldNumber = 3;
-    private int issueChainId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int IssueChainId {
-      get { return issueChainId_; }
-      set {
-        issueChainId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "max" field.</summary>
-    public const int MaxFieldNumber = 4;
+    public const int MaxFieldNumber = 3;
     private long max_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -347,7 +408,7 @@ namespace Forest.Inscription {
     }
 
     /// <summary>Field number for the "limit" field.</summary>
-    public const int LimitFieldNumber = 5;
+    public const int LimitFieldNumber = 4;
     private long limit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -359,7 +420,7 @@ namespace Forest.Inscription {
     }
 
     /// <summary>Field number for the "image" field.</summary>
-    public const int ImageFieldNumber = 6;
+    public const int ImageFieldNumber = 5;
     private string image_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -387,7 +448,6 @@ namespace Forest.Inscription {
       }
       if (SeedSymbol != other.SeedSymbol) return false;
       if (Tick != other.Tick) return false;
-      if (IssueChainId != other.IssueChainId) return false;
       if (Max != other.Max) return false;
       if (Limit != other.Limit) return false;
       if (Image != other.Image) return false;
@@ -400,7 +460,6 @@ namespace Forest.Inscription {
       int hash = 1;
       if (SeedSymbol.Length != 0) hash ^= SeedSymbol.GetHashCode();
       if (Tick.Length != 0) hash ^= Tick.GetHashCode();
-      if (IssueChainId != 0) hash ^= IssueChainId.GetHashCode();
       if (Max != 0L) hash ^= Max.GetHashCode();
       if (Limit != 0L) hash ^= Limit.GetHashCode();
       if (Image.Length != 0) hash ^= Image.GetHashCode();
@@ -430,20 +489,16 @@ namespace Forest.Inscription {
         output.WriteRawTag(18);
         output.WriteString(Tick);
       }
-      if (IssueChainId != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(IssueChainId);
-      }
       if (Max != 0L) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteInt64(Max);
       }
       if (Limit != 0L) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteInt64(Limit);
       }
       if (Image.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(42);
         output.WriteString(Image);
       }
       if (_unknownFields != null) {
@@ -464,20 +519,16 @@ namespace Forest.Inscription {
         output.WriteRawTag(18);
         output.WriteString(Tick);
       }
-      if (IssueChainId != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(IssueChainId);
-      }
       if (Max != 0L) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteInt64(Max);
       }
       if (Limit != 0L) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteInt64(Limit);
       }
       if (Image.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(42);
         output.WriteString(Image);
       }
       if (_unknownFields != null) {
@@ -495,9 +546,6 @@ namespace Forest.Inscription {
       }
       if (Tick.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Tick);
-      }
-      if (IssueChainId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(IssueChainId);
       }
       if (Max != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(Max);
@@ -525,9 +573,6 @@ namespace Forest.Inscription {
       }
       if (other.Tick.Length != 0) {
         Tick = other.Tick;
-      }
-      if (other.IssueChainId != 0) {
-        IssueChainId = other.IssueChainId;
       }
       if (other.Max != 0L) {
         Max = other.Max;
@@ -562,18 +607,14 @@ namespace Forest.Inscription {
             break;
           }
           case 24: {
-            IssueChainId = input.ReadInt32();
-            break;
-          }
-          case 32: {
             Max = input.ReadInt64();
             break;
           }
-          case 40: {
+          case 32: {
             Limit = input.ReadInt64();
             break;
           }
-          case 50: {
+          case 42: {
             Image = input.ReadString();
             break;
           }
@@ -601,18 +642,14 @@ namespace Forest.Inscription {
             break;
           }
           case 24: {
-            IssueChainId = input.ReadInt32();
-            break;
-          }
-          case 32: {
             Max = input.ReadInt64();
             break;
           }
-          case 40: {
+          case 32: {
             Limit = input.ReadInt64();
             break;
           }
-          case 50: {
+          case 42: {
             Image = input.ReadString();
             break;
           }
@@ -637,7 +674,7 @@ namespace Forest.Inscription {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Forest.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Forest.Contracts.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -826,7 +863,7 @@ namespace Forest.Inscription {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Forest.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Forest.Contracts.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1052,7 +1089,7 @@ namespace Forest.Inscription {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Forest.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Forest.Contracts.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1230,7 +1267,7 @@ namespace Forest.Inscription {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Forest.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Forest.Contracts.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1394,6 +1431,1328 @@ namespace Forest.Inscription {
 
   }
 
+  public sealed partial class DistributorsBalanceList : pb::IMessage<DistributorsBalanceList>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<DistributorsBalanceList> _parser = new pb::MessageParser<DistributorsBalanceList>(() => new DistributorsBalanceList());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<DistributorsBalanceList> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Forest.Contracts.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DistributorsBalanceList() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DistributorsBalanceList(DistributorsBalanceList other) : this() {
+      values_ = other.values_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DistributorsBalanceList Clone() {
+      return new DistributorsBalanceList(this);
+    }
+
+    /// <summary>Field number for the "values" field.</summary>
+    public const int ValuesFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Forest.Contracts.Inscription.DistributorsBalance> _repeated_values_codec
+        = pb::FieldCodec.ForMessage(10, global::Forest.Contracts.Inscription.DistributorsBalance.Parser);
+    private readonly pbc::RepeatedField<global::Forest.Contracts.Inscription.DistributorsBalance> values_ = new pbc::RepeatedField<global::Forest.Contracts.Inscription.DistributorsBalance>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Forest.Contracts.Inscription.DistributorsBalance> Values {
+      get { return values_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as DistributorsBalanceList);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(DistributorsBalanceList other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!values_.Equals(other.values_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= values_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      values_.WriteTo(output, _repeated_values_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      values_.WriteTo(ref output, _repeated_values_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += values_.CalculateSize(_repeated_values_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(DistributorsBalanceList other) {
+      if (other == null) {
+        return;
+      }
+      values_.Add(other.values_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            values_.AddEntriesFrom(input, _repeated_values_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            values_.AddEntriesFrom(ref input, _repeated_values_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class DistributorsBalance : pb::IMessage<DistributorsBalance>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<DistributorsBalance> _parser = new pb::MessageParser<DistributorsBalance>(() => new DistributorsBalance());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<DistributorsBalance> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Forest.Contracts.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DistributorsBalance() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DistributorsBalance(DistributorsBalance other) : this() {
+      distributor_ = other.distributor_ != null ? other.distributor_.Clone() : null;
+      balance_ = other.balance_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DistributorsBalance Clone() {
+      return new DistributorsBalance(this);
+    }
+
+    /// <summary>Field number for the "distributor" field.</summary>
+    public const int DistributorFieldNumber = 1;
+    private global::AElf.Types.Address distributor_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::AElf.Types.Address Distributor {
+      get { return distributor_; }
+      set {
+        distributor_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "balance" field.</summary>
+    public const int BalanceFieldNumber = 2;
+    private long balance_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long Balance {
+      get { return balance_; }
+      set {
+        balance_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as DistributorsBalance);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(DistributorsBalance other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Distributor, other.Distributor)) return false;
+      if (Balance != other.Balance) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (distributor_ != null) hash ^= Distributor.GetHashCode();
+      if (Balance != 0L) hash ^= Balance.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (distributor_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Distributor);
+      }
+      if (Balance != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(Balance);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (distributor_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Distributor);
+      }
+      if (Balance != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(Balance);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (distributor_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Distributor);
+      }
+      if (Balance != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Balance);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(DistributorsBalance other) {
+      if (other == null) {
+        return;
+      }
+      if (other.distributor_ != null) {
+        if (distributor_ == null) {
+          Distributor = new global::AElf.Types.Address();
+        }
+        Distributor.MergeFrom(other.Distributor);
+      }
+      if (other.Balance != 0L) {
+        Balance = other.Balance;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (distributor_ == null) {
+              Distributor = new global::AElf.Types.Address();
+            }
+            input.ReadMessage(Distributor);
+            break;
+          }
+          case 16: {
+            Balance = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (distributor_ == null) {
+              Distributor = new global::AElf.Types.Address();
+            }
+            input.ReadMessage(Distributor);
+            break;
+          }
+          case 16: {
+            Balance = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class DeployInscriptionInfo : pb::IMessage<DeployInscriptionInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<DeployInscriptionInfo> _parser = new pb::MessageParser<DeployInscriptionInfo>(() => new DeployInscriptionInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<DeployInscriptionInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Forest.Contracts.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DeployInscriptionInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DeployInscriptionInfo(DeployInscriptionInfo other) : this() {
+      p_ = other.p_;
+      op_ = other.op_;
+      tick_ = other.tick_;
+      max_ = other.max_;
+      lim_ = other.lim_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DeployInscriptionInfo Clone() {
+      return new DeployInscriptionInfo(this);
+    }
+
+    /// <summary>Field number for the "p" field.</summary>
+    public const int PFieldNumber = 1;
+    private string p_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string P {
+      get { return p_; }
+      set {
+        p_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "op" field.</summary>
+    public const int OpFieldNumber = 2;
+    private string op_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Op {
+      get { return op_; }
+      set {
+        op_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "tick" field.</summary>
+    public const int TickFieldNumber = 3;
+    private string tick_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Tick {
+      get { return tick_; }
+      set {
+        tick_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "max" field.</summary>
+    public const int MaxFieldNumber = 4;
+    private string max_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Max {
+      get { return max_; }
+      set {
+        max_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "lim" field.</summary>
+    public const int LimFieldNumber = 5;
+    private string lim_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Lim {
+      get { return lim_; }
+      set {
+        lim_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as DeployInscriptionInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(DeployInscriptionInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (P != other.P) return false;
+      if (Op != other.Op) return false;
+      if (Tick != other.Tick) return false;
+      if (Max != other.Max) return false;
+      if (Lim != other.Lim) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (P.Length != 0) hash ^= P.GetHashCode();
+      if (Op.Length != 0) hash ^= Op.GetHashCode();
+      if (Tick.Length != 0) hash ^= Tick.GetHashCode();
+      if (Max.Length != 0) hash ^= Max.GetHashCode();
+      if (Lim.Length != 0) hash ^= Lim.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (P.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(P);
+      }
+      if (Op.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Op);
+      }
+      if (Tick.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Tick);
+      }
+      if (Max.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Max);
+      }
+      if (Lim.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Lim);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (P.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(P);
+      }
+      if (Op.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Op);
+      }
+      if (Tick.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Tick);
+      }
+      if (Max.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Max);
+      }
+      if (Lim.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Lim);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (P.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(P);
+      }
+      if (Op.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Op);
+      }
+      if (Tick.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Tick);
+      }
+      if (Max.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Max);
+      }
+      if (Lim.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Lim);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(DeployInscriptionInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.P.Length != 0) {
+        P = other.P;
+      }
+      if (other.Op.Length != 0) {
+        Op = other.Op;
+      }
+      if (other.Tick.Length != 0) {
+        Tick = other.Tick;
+      }
+      if (other.Max.Length != 0) {
+        Max = other.Max;
+      }
+      if (other.Lim.Length != 0) {
+        Lim = other.Lim;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            P = input.ReadString();
+            break;
+          }
+          case 18: {
+            Op = input.ReadString();
+            break;
+          }
+          case 26: {
+            Tick = input.ReadString();
+            break;
+          }
+          case 34: {
+            Max = input.ReadString();
+            break;
+          }
+          case 42: {
+            Lim = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            P = input.ReadString();
+            break;
+          }
+          case 18: {
+            Op = input.ReadString();
+            break;
+          }
+          case 26: {
+            Tick = input.ReadString();
+            break;
+          }
+          case 34: {
+            Max = input.ReadString();
+            break;
+          }
+          case 42: {
+            Lim = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class MintInscriptionInfo : pb::IMessage<MintInscriptionInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<MintInscriptionInfo> _parser = new pb::MessageParser<MintInscriptionInfo>(() => new MintInscriptionInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<MintInscriptionInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Forest.Contracts.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MintInscriptionInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MintInscriptionInfo(MintInscriptionInfo other) : this() {
+      p_ = other.p_;
+      op_ = other.op_;
+      tick_ = other.tick_;
+      amt_ = other.amt_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MintInscriptionInfo Clone() {
+      return new MintInscriptionInfo(this);
+    }
+
+    /// <summary>Field number for the "p" field.</summary>
+    public const int PFieldNumber = 1;
+    private string p_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string P {
+      get { return p_; }
+      set {
+        p_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "op" field.</summary>
+    public const int OpFieldNumber = 2;
+    private string op_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Op {
+      get { return op_; }
+      set {
+        op_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "tick" field.</summary>
+    public const int TickFieldNumber = 3;
+    private string tick_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Tick {
+      get { return tick_; }
+      set {
+        tick_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "amt" field.</summary>
+    public const int AmtFieldNumber = 4;
+    private string amt_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Amt {
+      get { return amt_; }
+      set {
+        amt_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as MintInscriptionInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(MintInscriptionInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (P != other.P) return false;
+      if (Op != other.Op) return false;
+      if (Tick != other.Tick) return false;
+      if (Amt != other.Amt) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (P.Length != 0) hash ^= P.GetHashCode();
+      if (Op.Length != 0) hash ^= Op.GetHashCode();
+      if (Tick.Length != 0) hash ^= Tick.GetHashCode();
+      if (Amt.Length != 0) hash ^= Amt.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (P.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(P);
+      }
+      if (Op.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Op);
+      }
+      if (Tick.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Tick);
+      }
+      if (Amt.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Amt);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (P.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(P);
+      }
+      if (Op.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Op);
+      }
+      if (Tick.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Tick);
+      }
+      if (Amt.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Amt);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (P.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(P);
+      }
+      if (Op.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Op);
+      }
+      if (Tick.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Tick);
+      }
+      if (Amt.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Amt);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(MintInscriptionInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.P.Length != 0) {
+        P = other.P;
+      }
+      if (other.Op.Length != 0) {
+        Op = other.Op;
+      }
+      if (other.Tick.Length != 0) {
+        Tick = other.Tick;
+      }
+      if (other.Amt.Length != 0) {
+        Amt = other.Amt;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            P = input.ReadString();
+            break;
+          }
+          case 18: {
+            Op = input.ReadString();
+            break;
+          }
+          case 26: {
+            Tick = input.ReadString();
+            break;
+          }
+          case 34: {
+            Amt = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            P = input.ReadString();
+            break;
+          }
+          case 18: {
+            Op = input.ReadString();
+            break;
+          }
+          case 26: {
+            Tick = input.ReadString();
+            break;
+          }
+          case 34: {
+            Amt = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class CheckDistributorBalanceInput : pb::IMessage<CheckDistributorBalanceInput>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CheckDistributorBalanceInput> _parser = new pb::MessageParser<CheckDistributorBalanceInput>(() => new CheckDistributorBalanceInput());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<CheckDistributorBalanceInput> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Forest.Contracts.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[10]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CheckDistributorBalanceInput() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CheckDistributorBalanceInput(CheckDistributorBalanceInput other) : this() {
+      sender_ = other.sender_ != null ? other.sender_.Clone() : null;
+      tick_ = other.tick_;
+      amt_ = other.amt_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CheckDistributorBalanceInput Clone() {
+      return new CheckDistributorBalanceInput(this);
+    }
+
+    /// <summary>Field number for the "sender" field.</summary>
+    public const int SenderFieldNumber = 1;
+    private global::AElf.Types.Address sender_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::AElf.Types.Address Sender {
+      get { return sender_; }
+      set {
+        sender_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "tick" field.</summary>
+    public const int TickFieldNumber = 2;
+    private string tick_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Tick {
+      get { return tick_; }
+      set {
+        tick_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "amt" field.</summary>
+    public const int AmtFieldNumber = 3;
+    private long amt_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long Amt {
+      get { return amt_; }
+      set {
+        amt_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as CheckDistributorBalanceInput);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(CheckDistributorBalanceInput other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Sender, other.Sender)) return false;
+      if (Tick != other.Tick) return false;
+      if (Amt != other.Amt) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (sender_ != null) hash ^= Sender.GetHashCode();
+      if (Tick.Length != 0) hash ^= Tick.GetHashCode();
+      if (Amt != 0L) hash ^= Amt.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (sender_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Sender);
+      }
+      if (Tick.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Tick);
+      }
+      if (Amt != 0L) {
+        output.WriteRawTag(24);
+        output.WriteInt64(Amt);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (sender_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Sender);
+      }
+      if (Tick.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Tick);
+      }
+      if (Amt != 0L) {
+        output.WriteRawTag(24);
+        output.WriteInt64(Amt);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (sender_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Sender);
+      }
+      if (Tick.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Tick);
+      }
+      if (Amt != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Amt);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(CheckDistributorBalanceInput other) {
+      if (other == null) {
+        return;
+      }
+      if (other.sender_ != null) {
+        if (sender_ == null) {
+          Sender = new global::AElf.Types.Address();
+        }
+        Sender.MergeFrom(other.Sender);
+      }
+      if (other.Tick.Length != 0) {
+        Tick = other.Tick;
+      }
+      if (other.Amt != 0L) {
+        Amt = other.Amt;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (sender_ == null) {
+              Sender = new global::AElf.Types.Address();
+            }
+            input.ReadMessage(Sender);
+            break;
+          }
+          case 18: {
+            Tick = input.ReadString();
+            break;
+          }
+          case 24: {
+            Amt = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (sender_ == null) {
+              Sender = new global::AElf.Types.Address();
+            }
+            input.ReadMessage(Sender);
+            break;
+          }
+          case 18: {
+            Tick = input.ReadString();
+            break;
+          }
+          case 24: {
+            Amt = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   /// <summary>
   /// Event
   /// </summary>
@@ -1411,7 +2770,7 @@ namespace Forest.Inscription {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Forest.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Forest.Contracts.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1431,13 +2790,9 @@ namespace Forest.Inscription {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InscriptionCreated(InscriptionCreated other) : this() {
-      collectionSymbol_ = other.collectionSymbol_;
-      itemSymbol_ = other.itemSymbol_;
       tick_ = other.tick_;
       totalSupply_ = other.totalSupply_;
-      decimals_ = other.decimals_;
       issuer_ = other.issuer_ != null ? other.issuer_.Clone() : null;
-      isBurnable_ = other.isBurnable_;
       issueChainId_ = other.issueChainId_;
       collectionExternalInfo_ = other.collectionExternalInfo_ != null ? other.collectionExternalInfo_.Clone() : null;
       itemExternalInfo_ = other.itemExternalInfo_ != null ? other.itemExternalInfo_.Clone() : null;
@@ -1451,36 +2806,6 @@ namespace Forest.Inscription {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InscriptionCreated Clone() {
       return new InscriptionCreated(this);
-    }
-
-    /// <summary>Field number for the "collection_symbol" field.</summary>
-    public const int CollectionSymbolFieldNumber = 1;
-    private string collectionSymbol_ = "";
-    /// <summary>
-    /// The symbol of the inscription collection.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string CollectionSymbol {
-      get { return collectionSymbol_; }
-      set {
-        collectionSymbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "item_symbol" field.</summary>
-    public const int ItemSymbolFieldNumber = 2;
-    private string itemSymbol_ = "";
-    /// <summary>
-    /// The symbol of the inscription item.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ItemSymbol {
-      get { return itemSymbol_; }
-      set {
-        itemSymbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
     }
 
     /// <summary>Field number for the "tick" field.</summary>
@@ -1513,21 +2838,6 @@ namespace Forest.Inscription {
       }
     }
 
-    /// <summary>Field number for the "decimals" field.</summary>
-    public const int DecimalsFieldNumber = 5;
-    private int decimals_;
-    /// <summary>
-    /// The precision of the inscription.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Decimals {
-      get { return decimals_; }
-      set {
-        decimals_ = value;
-      }
-    }
-
     /// <summary>Field number for the "issuer" field.</summary>
     public const int IssuerFieldNumber = 6;
     private global::AElf.Types.Address issuer_;
@@ -1540,21 +2850,6 @@ namespace Forest.Inscription {
       get { return issuer_; }
       set {
         issuer_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_burnable" field.</summary>
-    public const int IsBurnableFieldNumber = 7;
-    private bool isBurnable_;
-    /// <summary>
-    /// A flag indicating if this inscription is burnable.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsBurnable {
-      get { return isBurnable_; }
-      set {
-        isBurnable_ = value;
       }
     }
 
@@ -1575,13 +2870,13 @@ namespace Forest.Inscription {
 
     /// <summary>Field number for the "collection_external_info" field.</summary>
     public const int CollectionExternalInfoFieldNumber = 9;
-    private global::Forest.Inscription.ExternalInfos collectionExternalInfo_;
+    private global::Forest.Contracts.Inscription.ExternalInfos collectionExternalInfo_;
     /// <summary>
     /// The external information of the inscription collection.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Forest.Inscription.ExternalInfos CollectionExternalInfo {
+    public global::Forest.Contracts.Inscription.ExternalInfos CollectionExternalInfo {
       get { return collectionExternalInfo_; }
       set {
         collectionExternalInfo_ = value;
@@ -1590,13 +2885,13 @@ namespace Forest.Inscription {
 
     /// <summary>Field number for the "item_external_info" field.</summary>
     public const int ItemExternalInfoFieldNumber = 10;
-    private global::Forest.Inscription.ExternalInfos itemExternalInfo_;
+    private global::Forest.Contracts.Inscription.ExternalInfos itemExternalInfo_;
     /// <summary>
     /// The external information of the inscription item.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Forest.Inscription.ExternalInfos ItemExternalInfo {
+    public global::Forest.Contracts.Inscription.ExternalInfos ItemExternalInfo {
       get { return itemExternalInfo_; }
       set {
         itemExternalInfo_ = value;
@@ -1657,13 +2952,9 @@ namespace Forest.Inscription {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CollectionSymbol != other.CollectionSymbol) return false;
-      if (ItemSymbol != other.ItemSymbol) return false;
       if (Tick != other.Tick) return false;
       if (TotalSupply != other.TotalSupply) return false;
-      if (Decimals != other.Decimals) return false;
       if (!object.Equals(Issuer, other.Issuer)) return false;
-      if (IsBurnable != other.IsBurnable) return false;
       if (IssueChainId != other.IssueChainId) return false;
       if (!object.Equals(CollectionExternalInfo, other.CollectionExternalInfo)) return false;
       if (!object.Equals(ItemExternalInfo, other.ItemExternalInfo)) return false;
@@ -1677,13 +2968,9 @@ namespace Forest.Inscription {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CollectionSymbol.Length != 0) hash ^= CollectionSymbol.GetHashCode();
-      if (ItemSymbol.Length != 0) hash ^= ItemSymbol.GetHashCode();
       if (Tick.Length != 0) hash ^= Tick.GetHashCode();
       if (TotalSupply != 0L) hash ^= TotalSupply.GetHashCode();
-      if (Decimals != 0) hash ^= Decimals.GetHashCode();
       if (issuer_ != null) hash ^= Issuer.GetHashCode();
-      if (IsBurnable != false) hash ^= IsBurnable.GetHashCode();
       if (IssueChainId != 0) hash ^= IssueChainId.GetHashCode();
       if (collectionExternalInfo_ != null) hash ^= CollectionExternalInfo.GetHashCode();
       if (itemExternalInfo_ != null) hash ^= ItemExternalInfo.GetHashCode();
@@ -1708,14 +2995,6 @@ namespace Forest.Inscription {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CollectionSymbol.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(CollectionSymbol);
-      }
-      if (ItemSymbol.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(ItemSymbol);
-      }
       if (Tick.Length != 0) {
         output.WriteRawTag(26);
         output.WriteString(Tick);
@@ -1724,17 +3003,9 @@ namespace Forest.Inscription {
         output.WriteRawTag(32);
         output.WriteInt64(TotalSupply);
       }
-      if (Decimals != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(Decimals);
-      }
       if (issuer_ != null) {
         output.WriteRawTag(50);
         output.WriteMessage(Issuer);
-      }
-      if (IsBurnable != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(IsBurnable);
       }
       if (IssueChainId != 0) {
         output.WriteRawTag(64);
@@ -1770,14 +3041,6 @@ namespace Forest.Inscription {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CollectionSymbol.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(CollectionSymbol);
-      }
-      if (ItemSymbol.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(ItemSymbol);
-      }
       if (Tick.Length != 0) {
         output.WriteRawTag(26);
         output.WriteString(Tick);
@@ -1786,17 +3049,9 @@ namespace Forest.Inscription {
         output.WriteRawTag(32);
         output.WriteInt64(TotalSupply);
       }
-      if (Decimals != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(Decimals);
-      }
       if (issuer_ != null) {
         output.WriteRawTag(50);
         output.WriteMessage(Issuer);
-      }
-      if (IsBurnable != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(IsBurnable);
       }
       if (IssueChainId != 0) {
         output.WriteRawTag(64);
@@ -1832,26 +3087,14 @@ namespace Forest.Inscription {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CollectionSymbol.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(CollectionSymbol);
-      }
-      if (ItemSymbol.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ItemSymbol);
-      }
       if (Tick.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Tick);
       }
       if (TotalSupply != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(TotalSupply);
       }
-      if (Decimals != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Decimals);
-      }
       if (issuer_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Issuer);
-      }
-      if (IsBurnable != false) {
-        size += 1 + 1;
       }
       if (IssueChainId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(IssueChainId);
@@ -1883,20 +3126,11 @@ namespace Forest.Inscription {
       if (other == null) {
         return;
       }
-      if (other.CollectionSymbol.Length != 0) {
-        CollectionSymbol = other.CollectionSymbol;
-      }
-      if (other.ItemSymbol.Length != 0) {
-        ItemSymbol = other.ItemSymbol;
-      }
       if (other.Tick.Length != 0) {
         Tick = other.Tick;
       }
       if (other.TotalSupply != 0L) {
         TotalSupply = other.TotalSupply;
-      }
-      if (other.Decimals != 0) {
-        Decimals = other.Decimals;
       }
       if (other.issuer_ != null) {
         if (issuer_ == null) {
@@ -1904,21 +3138,18 @@ namespace Forest.Inscription {
         }
         Issuer.MergeFrom(other.Issuer);
       }
-      if (other.IsBurnable != false) {
-        IsBurnable = other.IsBurnable;
-      }
       if (other.IssueChainId != 0) {
         IssueChainId = other.IssueChainId;
       }
       if (other.collectionExternalInfo_ != null) {
         if (collectionExternalInfo_ == null) {
-          CollectionExternalInfo = new global::Forest.Inscription.ExternalInfos();
+          CollectionExternalInfo = new global::Forest.Contracts.Inscription.ExternalInfos();
         }
         CollectionExternalInfo.MergeFrom(other.CollectionExternalInfo);
       }
       if (other.itemExternalInfo_ != null) {
         if (itemExternalInfo_ == null) {
-          ItemExternalInfo = new global::Forest.Inscription.ExternalInfos();
+          ItemExternalInfo = new global::Forest.Contracts.Inscription.ExternalInfos();
         }
         ItemExternalInfo.MergeFrom(other.ItemExternalInfo);
       }
@@ -1952,24 +3183,12 @@ namespace Forest.Inscription {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            CollectionSymbol = input.ReadString();
-            break;
-          }
-          case 18: {
-            ItemSymbol = input.ReadString();
-            break;
-          }
           case 26: {
             Tick = input.ReadString();
             break;
           }
           case 32: {
             TotalSupply = input.ReadInt64();
-            break;
-          }
-          case 40: {
-            Decimals = input.ReadInt32();
             break;
           }
           case 50: {
@@ -1979,24 +3198,20 @@ namespace Forest.Inscription {
             input.ReadMessage(Issuer);
             break;
           }
-          case 56: {
-            IsBurnable = input.ReadBool();
-            break;
-          }
           case 64: {
             IssueChainId = input.ReadInt32();
             break;
           }
           case 74: {
             if (collectionExternalInfo_ == null) {
-              CollectionExternalInfo = new global::Forest.Inscription.ExternalInfos();
+              CollectionExternalInfo = new global::Forest.Contracts.Inscription.ExternalInfos();
             }
             input.ReadMessage(CollectionExternalInfo);
             break;
           }
           case 82: {
             if (itemExternalInfo_ == null) {
-              ItemExternalInfo = new global::Forest.Inscription.ExternalInfos();
+              ItemExternalInfo = new global::Forest.Contracts.Inscription.ExternalInfos();
             }
             input.ReadMessage(ItemExternalInfo);
             break;
@@ -2034,24 +3249,12 @@ namespace Forest.Inscription {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            CollectionSymbol = input.ReadString();
-            break;
-          }
-          case 18: {
-            ItemSymbol = input.ReadString();
-            break;
-          }
           case 26: {
             Tick = input.ReadString();
             break;
           }
           case 32: {
             TotalSupply = input.ReadInt64();
-            break;
-          }
-          case 40: {
-            Decimals = input.ReadInt32();
             break;
           }
           case 50: {
@@ -2061,24 +3264,20 @@ namespace Forest.Inscription {
             input.ReadMessage(Issuer);
             break;
           }
-          case 56: {
-            IsBurnable = input.ReadBool();
-            break;
-          }
           case 64: {
             IssueChainId = input.ReadInt32();
             break;
           }
           case 74: {
             if (collectionExternalInfo_ == null) {
-              CollectionExternalInfo = new global::Forest.Inscription.ExternalInfos();
+              CollectionExternalInfo = new global::Forest.Contracts.Inscription.ExternalInfos();
             }
             input.ReadMessage(CollectionExternalInfo);
             break;
           }
           case 82: {
             if (itemExternalInfo_ == null) {
-              ItemExternalInfo = new global::Forest.Inscription.ExternalInfos();
+              ItemExternalInfo = new global::Forest.Contracts.Inscription.ExternalInfos();
             }
             input.ReadMessage(ItemExternalInfo);
             break;
@@ -2122,7 +3321,7 @@ namespace Forest.Inscription {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Forest.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Forest.Contracts.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2300,7 +3499,7 @@ namespace Forest.Inscription {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Forest.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Forest.Contracts.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2320,7 +3519,6 @@ namespace Forest.Inscription {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InscriptionIssued(InscriptionIssued other) : this() {
-      symbol_ = other.symbol_;
       tick_ = other.tick_;
       amt_ = other.amt_;
       to_ = other.to_ != null ? other.to_.Clone() : null;
@@ -2332,21 +3530,6 @@ namespace Forest.Inscription {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InscriptionIssued Clone() {
       return new InscriptionIssued(this);
-    }
-
-    /// <summary>Field number for the "symbol" field.</summary>
-    public const int SymbolFieldNumber = 1;
-    private string symbol_ = "";
-    /// <summary>
-    /// The symbol of issued inscription.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Symbol {
-      get { return symbol_; }
-      set {
-        symbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
     }
 
     /// <summary>Field number for the "tick" field.</summary>
@@ -2424,7 +3607,6 @@ namespace Forest.Inscription {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Symbol != other.Symbol) return false;
       if (Tick != other.Tick) return false;
       if (Amt != other.Amt) return false;
       if (!object.Equals(To, other.To)) return false;
@@ -2436,7 +3618,6 @@ namespace Forest.Inscription {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Symbol.Length != 0) hash ^= Symbol.GetHashCode();
       if (Tick.Length != 0) hash ^= Tick.GetHashCode();
       if (Amt != 0L) hash ^= Amt.GetHashCode();
       if (to_ != null) hash ^= To.GetHashCode();
@@ -2459,10 +3640,6 @@ namespace Forest.Inscription {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Symbol.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Symbol);
-      }
       if (Tick.Length != 0) {
         output.WriteRawTag(18);
         output.WriteString(Tick);
@@ -2489,10 +3666,6 @@ namespace Forest.Inscription {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Symbol.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Symbol);
-      }
       if (Tick.Length != 0) {
         output.WriteRawTag(18);
         output.WriteString(Tick);
@@ -2519,9 +3692,6 @@ namespace Forest.Inscription {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Symbol.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Symbol);
-      }
       if (Tick.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Tick);
       }
@@ -2545,9 +3715,6 @@ namespace Forest.Inscription {
     public void MergeFrom(InscriptionIssued other) {
       if (other == null) {
         return;
-      }
-      if (other.Symbol.Length != 0) {
-        Symbol = other.Symbol;
       }
       if (other.Tick.Length != 0) {
         Tick = other.Tick;
@@ -2579,10 +3746,6 @@ namespace Forest.Inscription {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            Symbol = input.ReadString();
-            break;
-          }
           case 18: {
             Tick = input.ReadString();
             break;
@@ -2617,10 +3780,6 @@ namespace Forest.Inscription {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            Symbol = input.ReadString();
-            break;
-          }
           case 18: {
             Tick = input.ReadString();
             break;
@@ -2661,7 +3820,7 @@ namespace Forest.Inscription {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Forest.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Forest.Contracts.Inscription.InscriptionContractReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2683,7 +3842,6 @@ namespace Forest.Inscription {
     public InscriptionTransferred(InscriptionTransferred other) : this() {
       from_ = other.from_ != null ? other.from_.Clone() : null;
       to_ = other.to_ != null ? other.to_.Clone() : null;
-      symbol_ = other.symbol_;
       tick_ = other.tick_;
       amt_ = other.amt_;
       inscriptionInfo_ = other.inscriptionInfo_;
@@ -2723,21 +3881,6 @@ namespace Forest.Inscription {
       get { return to_; }
       set {
         to_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "symbol" field.</summary>
-    public const int SymbolFieldNumber = 3;
-    private string symbol_ = "";
-    /// <summary>
-    /// The symbol of the transferred inscription.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Symbol {
-      get { return symbol_; }
-      set {
-        symbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -2803,7 +3946,6 @@ namespace Forest.Inscription {
       }
       if (!object.Equals(From, other.From)) return false;
       if (!object.Equals(To, other.To)) return false;
-      if (Symbol != other.Symbol) return false;
       if (Tick != other.Tick) return false;
       if (Amt != other.Amt) return false;
       if (InscriptionInfo != other.InscriptionInfo) return false;
@@ -2816,7 +3958,6 @@ namespace Forest.Inscription {
       int hash = 1;
       if (from_ != null) hash ^= From.GetHashCode();
       if (to_ != null) hash ^= To.GetHashCode();
-      if (Symbol.Length != 0) hash ^= Symbol.GetHashCode();
       if (Tick.Length != 0) hash ^= Tick.GetHashCode();
       if (Amt != 0L) hash ^= Amt.GetHashCode();
       if (InscriptionInfo.Length != 0) hash ^= InscriptionInfo.GetHashCode();
@@ -2845,10 +3986,6 @@ namespace Forest.Inscription {
       if (to_ != null) {
         output.WriteRawTag(18);
         output.WriteMessage(To);
-      }
-      if (Symbol.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Symbol);
       }
       if (Tick.Length != 0) {
         output.WriteRawTag(34);
@@ -2880,10 +4017,6 @@ namespace Forest.Inscription {
         output.WriteRawTag(18);
         output.WriteMessage(To);
       }
-      if (Symbol.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Symbol);
-      }
       if (Tick.Length != 0) {
         output.WriteRawTag(34);
         output.WriteString(Tick);
@@ -2911,9 +4044,6 @@ namespace Forest.Inscription {
       }
       if (to_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(To);
-      }
-      if (Symbol.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Symbol);
       }
       if (Tick.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Tick);
@@ -2947,9 +4077,6 @@ namespace Forest.Inscription {
           To = new global::AElf.Types.Address();
         }
         To.MergeFrom(other.To);
-      }
-      if (other.Symbol.Length != 0) {
-        Symbol = other.Symbol;
       }
       if (other.Tick.Length != 0) {
         Tick = other.Tick;
@@ -2987,10 +4114,6 @@ namespace Forest.Inscription {
               To = new global::AElf.Types.Address();
             }
             input.ReadMessage(To);
-            break;
-          }
-          case 26: {
-            Symbol = input.ReadString();
             break;
           }
           case 34: {
@@ -3032,10 +4155,6 @@ namespace Forest.Inscription {
               To = new global::AElf.Types.Address();
             }
             input.ReadMessage(To);
-            break;
-          }
-          case 26: {
-            Symbol = input.ReadString();
             break;
           }
           case 34: {

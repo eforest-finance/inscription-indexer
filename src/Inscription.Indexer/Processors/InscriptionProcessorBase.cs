@@ -41,7 +41,7 @@ public class InscriptionProcessorBase<TEvent> : AElfLogEventProcessorBase<TEvent
         return ContractInfoOptions.ContractInfos[chainId].InscriptionContractAddress;
     }
     
-    protected async Task AddInscriptionTransferAsync(LogEventContext context, string method, string from, string to, string tick, string symbol, long amt, string inscriptionInfo)
+    protected async Task AddInscriptionTransferAsync(LogEventContext context, string method, string from, string to, string tick, long amt, string inscriptionInfo)
     {
         var inscriptionId = IdGenerateHelper.GetId(context.ChainId, tick);
         var inscription = await IssuedInscriptionRepository.GetFromBlockStateSetAsync(inscriptionId, context.ChainId);
@@ -54,7 +54,6 @@ public class InscriptionProcessorBase<TEvent> : AElfLogEventProcessorBase<TEvent
         {
             Id = id,
             Method = method,
-            Symbol = symbol,
             Tick = tick,
             FromAddress = from,
             ToAddress = to,

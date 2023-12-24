@@ -7,7 +7,6 @@ public class InscriptionTransferDto : GraphQLDto
     public string FromAddress { get; set; }
     public string ToAddress { get; set; }
     public string InscriptionInfo { get; set; }
-    public string Symbol { get; set; }
     public string Tick { get; set; }
     public string InscriptionImage { get; set; }
     public long Amt { get; set; }
