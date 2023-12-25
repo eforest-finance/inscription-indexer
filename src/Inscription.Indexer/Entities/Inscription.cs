@@ -21,9 +21,3 @@ public class Inscription : InscriptionIndexerEntity<string>, IIndexBuild
     [Keyword]
     public string TransactionId { get; set; }
 }
-
-public class ExternalInfo
-{
-    public string Key { get; set; }
-    public string Value { get; set; }
-}

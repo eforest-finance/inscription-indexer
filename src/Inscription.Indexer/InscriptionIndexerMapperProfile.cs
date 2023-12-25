@@ -47,6 +47,5 @@ public class InscriptionIndexerMapperProfile : Profile
         CreateMap<Entities.InscriptionTransfer, InscriptionTransferDto>();
         
         CreateMap<LogEventContext, Entities.InscriptionHolder>();
-        CreateMap<Entities.InscriptionHolder, InscriptionHolderDto>();
     }
 }
