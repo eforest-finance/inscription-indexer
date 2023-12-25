@@ -14,7 +14,7 @@ namespace Inscription.Indexer.TestBase;
     typeof(AbpAutoMapperModule),
     typeof(AbpTestBaseModule)
     )]
-public class AElfIndexerInscriptionTestBaseModule:AbpModule
+public class InscriptionIndexerTestBaseModule:AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {

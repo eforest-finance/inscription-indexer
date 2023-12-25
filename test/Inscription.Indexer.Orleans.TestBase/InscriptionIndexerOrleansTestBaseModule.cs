@@ -9,7 +9,7 @@ namespace Inscription.Indexer.Orleans.TestBase;
 
 [DependsOn(typeof(AbpAutofacModule),
     typeof(AbpTestBaseModule),
-    typeof(AElfIndexerInscriptionTestBaseModule)
+    typeof(InscriptionIndexerTestBaseModule)
     )]
 public class InscriptionIndexerOrleansTestBaseModule:AbpModule
 {
