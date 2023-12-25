@@ -4,12 +4,12 @@ using Volo.Abp.Modularity;
 
 namespace Inscription.Indexer.Orleans.TestBase;
 
-public abstract class AElfIndexerInscriptionOrleansTestBase<TStartupModule>:AElfIndexerInscriptionTestBase<TStartupModule> 
+public abstract class InscriptionIndexerOrleansTestBase<TStartupModule>:InscriptionIndexerTestBase<TStartupModule> 
     where TStartupModule : IAbpModule
 {
     protected readonly TestCluster Cluster;
 
-    public AElfIndexerInscriptionOrleansTestBase()
+    public InscriptionIndexerOrleansTestBase()
     {
         Cluster = GetRequiredService<ClusterFixture>().Cluster;
     }

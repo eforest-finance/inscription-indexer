@@ -8,7 +8,7 @@ namespace Inscription.Indexer.TestBase;
 
 /* All test classes are derived from this class, directly or indirectly.
      */
-public class AElfIndexerInscriptionTestBase<TStartupModule> : AbpIntegratedTest<TStartupModule> 
+public class InscriptionIndexerTestBase<TStartupModule> : AbpIntegratedTest<TStartupModule> 
     where TStartupModule : IAbpModule
 {
     protected override void SetAbpApplicationCreationOptions(AbpApplicationCreationOptions options)

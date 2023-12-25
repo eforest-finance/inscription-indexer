@@ -6,6 +6,7 @@ using AElfIndexer.Grains.State.Client;
 using GraphQL;
 using Nest;
 using Orleans;
+using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.ObjectMapping;
 
@@ -15,11 +16,17 @@ public class Query
 {
     private static readonly string _mainChainId = "AELF";
     private static readonly string _inscriptionImageKey = "inscription_image";
+    private static readonly int MaxResultCount = 1000;
     
     public static async Task<List<InscriptionDto>> Inscription(
         [FromServices] IAElfIndexerClientEntityRepository<Entities.Inscription, LogEventInfo> repository,
         [FromServices] IObjectMapper objectMapper, GetInscriptionInput input)
     {
+        if (input.EndBlockHeight - input.BeginBlockHeight + 1 > MaxResultCount)
+        {
+            throw new ArgumentOutOfRangeException("Too many blocks to query.");
+        }
+
         var mustQuery = new List<Func<QueryContainerDescriptor<Entities.Inscription>, QueryContainer>>();
         if (!input.ChainId.IsNullOrWhiteSpace())
         {
