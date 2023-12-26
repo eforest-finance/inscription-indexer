@@ -6,7 +6,6 @@ using AElfIndexer.Grains.State.Client;
 using GraphQL;
 using Nest;
 using Orleans;
-using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.ObjectMapping;
 
@@ -14,15 +13,15 @@ namespace Inscription.Indexer.GraphQL;
 
 public class Query
 {
-    private static readonly string _mainChainId = "AELF";
-    private static readonly string _inscriptionImageKey = "inscription_image";
-    private static readonly int MaxResultCount = 1000;
-    
+    private const string MainChainId = "AELF";
+    private const string InscriptionImageKey = "inscription_image";
+    private const int MaxQueryHeight = 1000;
+
     public static async Task<List<InscriptionDto>> Inscription(
         [FromServices] IAElfIndexerClientEntityRepository<Entities.Inscription, LogEventInfo> repository,
         [FromServices] IObjectMapper objectMapper, GetInscriptionInput input)
     {
-        if (input.EndBlockHeight - input.BeginBlockHeight + 1 > MaxResultCount)
+        if (input.EndBlockHeight - input.BeginBlockHeight + 1 > MaxQueryHeight)
         {
             throw new ArgumentOutOfRangeException("Too many blocks to query.");
         }
@@ -49,9 +48,9 @@ public class Query
         }
 
         QueryContainer Filter(QueryContainerDescriptor<Entities.Inscription> f) => f.Bool(b => b.Must(mustQuery));
-        
+
         var result = await repository.GetListAsync(Filter, sortExp: k => k.BlockHeight,
-            sortType: SortOrder.Ascending);
+            sortType: SortOrder.Ascending, limit: 10000);
         return objectMapper.Map<List<Entities.Inscription>, List<InscriptionDto>>(result.Item2);
     }
 
@@ -161,13 +160,13 @@ public class Query
         List<string> ticks)
     {
         var inscriptionMustQuery = new List<Func<QueryContainerDescriptor<Entities.Inscription>, QueryContainer>>();
-        inscriptionMustQuery.Add(q => q.Ids(i => i.Values(ticks.Select(i => IdGenerateHelper.GetId(_mainChainId, i)))));
+        inscriptionMustQuery.Add(q => q.Ids(i => i.Values(ticks.Select(i => IdGenerateHelper.GetId(MainChainId, i)))));
         QueryContainer inscriptionFilter(QueryContainerDescriptor<Entities.Inscription> f) => f.Bool(b => b.Must(inscriptionMustQuery));
         var inscriptions = await inscriptionRepository.GetListAsync(inscriptionFilter);
         var result = new Dictionary<string, string>();
         foreach (var inscription in inscriptions.Item2)
         {
-            if (inscription.CollectionExternalInfo.TryGetValue(_inscriptionImageKey, out var image))
+            if (inscription.CollectionExternalInfo.TryGetValue(InscriptionImageKey, out var image))
             {
                 result.Add(inscription.Tick, image);
             }
