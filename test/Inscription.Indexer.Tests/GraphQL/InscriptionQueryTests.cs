@@ -16,8 +16,7 @@ public class InscriptionQueryTests : InscriptionIndexerTestBase
         {
             ChainId = ChainId,
             Tick = "Tick1",
-            BeginBlockHeight = 1000,
-            EndBlockHeight = 2000
+            MaxResultCount = 1001
         }).ShouldThrowAsync<ArgumentOutOfRangeException>();
 
         var list = await Query.Inscription(InscriptionRepository, ObjectMapper, new GetInscriptionInput()

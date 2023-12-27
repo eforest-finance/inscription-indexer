@@ -15,16 +15,12 @@ public class Query
 {
     private const string MainChainId = "AELF";
     private const string InscriptionImageKey = "inscription_image";
-    private const int MaxQueryHeight = 1000;
 
     public static async Task<List<InscriptionDto>> Inscription(
         [FromServices] IAElfIndexerClientEntityRepository<Entities.Inscription, LogEventInfo> repository,
         [FromServices] IObjectMapper objectMapper, GetInscriptionInput input)
     {
-        if (input.EndBlockHeight - input.BeginBlockHeight + 1 > MaxQueryHeight)
-        {
-            throw new ArgumentOutOfRangeException("Too many blocks to query.");
-        }
+        input.Validate();
 
         var mustQuery = new List<Func<QueryContainerDescriptor<Entities.Inscription>, QueryContainer>>();
         if (!input.ChainId.IsNullOrWhiteSpace())
@@ -37,20 +33,20 @@ public class Query
             mustQuery.Add(q => q.Term(i => i.Field(f => f.Tick).Value(input.Tick)));
         }
 
-        if (input.BeginBlockHeight != 0)
+        if (input.BeginBlockHeight.HasValue)
         {
-            mustQuery.Add(q => q.Range(i => i.Field(f => f.BlockHeight).GreaterThanOrEquals(input.BeginBlockHeight)));
+            mustQuery.Add(q => q.Range(i => i.Field(f => f.BlockHeight).GreaterThanOrEquals(input.BeginBlockHeight.Value)));
         }
         
-        if (input.EndBlockHeight != 0)
+        if (input.EndBlockHeight.HasValue)
         {
-            mustQuery.Add(q => q.Range(i => i.Field(f => f.BlockHeight).LessThanOrEquals(input.EndBlockHeight)));
+            mustQuery.Add(q => q.Range(i => i.Field(f => f.BlockHeight).LessThanOrEquals(input.EndBlockHeight.Value)));
         }
 
         QueryContainer Filter(QueryContainerDescriptor<Entities.Inscription> f) => f.Bool(b => b.Must(mustQuery));
 
         var result = await repository.GetListAsync(Filter, sortExp: k => k.BlockHeight,
-            sortType: SortOrder.Ascending, limit: 10000);
+            sortType: SortOrder.Ascending, limit: input.MaxResultCount.Value, skip: input.SkipCount.Value);
         return objectMapper.Map<List<Entities.Inscription>, List<InscriptionDto>>(result.Item2);
     }
 
@@ -80,7 +76,7 @@ public class Query
         QueryContainer Filter(QueryContainerDescriptor<Entities.IssuedInscription> f) => f.Bool(b => b.Must(mustQuery));
         
         var issuedInscriptions = await issuedInscriptionRepository.GetListAsync(Filter, sortExp: k => k.HolderCount,
-            sortType: SortOrder.Descending, limit: input.MaxResultCount, skip: input.SkipCount);
+            sortType: SortOrder.Descending, limit: input.MaxResultCount.Value, skip: input.SkipCount.Value);
         var totalCount = 0L;
         var issuedInscriptionDtos =
             objectMapper.Map<List<Entities.IssuedInscription>, List<IssuedInscriptionDto>>(issuedInscriptions.Item2);
@@ -119,7 +115,7 @@ public class Query
             f.Bool(b => b.Must(mustQuery));
 
         var transfers = await transferRepository.GetListAsync(Filter, sortExp: k => k.BlockTime,
-            sortType: SortOrder.Descending, limit: input.MaxResultCount, skip: input.SkipCount);
+            sortType: SortOrder.Descending, limit: input.MaxResultCount.Value, skip: input.SkipCount.Value);
 
         var inscriptionTransferDtos =
             objectMapper.Map<List<Entities.InscriptionTransfer>, List<InscriptionTransferDto>>(transfers.Item2);

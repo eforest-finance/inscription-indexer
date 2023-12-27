@@ -1,9 +1,12 @@
-using Volo.Abp.Application.Dtos;
-
 namespace Inscription.Indexer.GraphQL;
 
-public class PagedResultQueryInput : PagedAndSortedResultRequestDto
+public class PagedResultQueryInput
 {
+    private const int MaxMaxResultCount = 1000;
+    
+    public int? SkipCount { get; set; } = 0;
+    public int? MaxResultCount { get; set; } = 10;
+    
     public void Validate()
     {
         if (MaxResultCount > MaxMaxResultCount)
