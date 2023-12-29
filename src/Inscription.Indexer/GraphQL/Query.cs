@@ -4,6 +4,7 @@ using AElfIndexer.Grains;
 using AElfIndexer.Grains.Grain.Client;
 using AElfIndexer.Grains.State.Client;
 using GraphQL;
+using Microsoft.Extensions.Options;
 using Nest;
 using Orleans;
 using Volo.Abp.Application.Dtos;
@@ -53,6 +54,7 @@ public class Query
     public static async Task<PagedResultDto<IssuedInscriptionDto>> IssuedInscription(
         [FromServices] IAElfIndexerClientEntityRepository<Entities.IssuedInscription, LogEventInfo> issuedInscriptionRepository,
         [FromServices] IAElfIndexerClientEntityRepository<Entities.Inscription, LogEventInfo> inscriptionRepository,
+        [FromServices] IOptionsSnapshot<InscriptionOptions> inscriptionOptions,
         [FromServices] IObjectMapper objectMapper, GetIssuedInscriptionInput input)
     {
         input.Validate();
@@ -73,6 +75,16 @@ public class Query
             mustQuery.Add(q => q.Term(i => i.Field(f => f.IsCompleted).Value(input.IsCompleted.Value)));
         }
         
+        if (inscriptionOptions.Value.IgnoreInscription.Count > 0)
+        {
+            var mustNotQuery = new List<Func<QueryContainerDescriptor<Entities.IssuedInscription>, QueryContainer>>();
+            foreach (var ignoreTick in inscriptionOptions.Value.IgnoreInscription)
+            {
+                mustNotQuery.Add(q => q.Term(i => i.Field(f => f.Tick).Value(ignoreTick)));
+            }
+            mustQuery.Add(q=>q.Bool(b=>b.MustNot(mustNotQuery)));
+        }
+
         QueryContainer Filter(QueryContainerDescriptor<Entities.IssuedInscription> f) => f.Bool(b => b.Must(mustQuery));
         
         var issuedInscriptions = await issuedInscriptionRepository.GetListAsync(Filter, sortExp: k => k.HolderCount,
@@ -101,6 +113,7 @@ public class Query
     public static async Task<List<InscriptionTransferDto>> InscriptionTransfer(
         [FromServices] IAElfIndexerClientEntityRepository<Entities.InscriptionTransfer, LogEventInfo> transferRepository,
         [FromServices] IAElfIndexerClientEntityRepository<Entities.Inscription, LogEventInfo> inscriptionRepository,
+        [FromServices] IOptionsSnapshot<InscriptionOptions> inscriptionOptions,
         [FromServices] IObjectMapper objectMapper, GetInscriptionTransferInput input)
     {
         input.Validate();
@@ -109,6 +122,16 @@ public class Query
         if (!input.ChainId.IsNullOrWhiteSpace())
         {
             mustQuery.Add(q => q.Term(i => i.Field(f => f.ChainId).Value(input.ChainId)));
+        }
+        
+        if (inscriptionOptions.Value.IgnoreInscription.Count > 0)
+        {
+            var mustNotQuery = new List<Func<QueryContainerDescriptor<Entities.InscriptionTransfer>, QueryContainer>>();
+            foreach (var ignoreTick in inscriptionOptions.Value.IgnoreInscription)
+            {
+                mustNotQuery.Add(q => q.Term(i => i.Field(f => f.Tick).Value(ignoreTick)));
+            }
+            mustQuery.Add(q=>q.Bool(b=>b.MustNot(mustNotQuery)));
         }
 
         QueryContainer Filter(QueryContainerDescriptor<Entities.InscriptionTransfer> f) =>

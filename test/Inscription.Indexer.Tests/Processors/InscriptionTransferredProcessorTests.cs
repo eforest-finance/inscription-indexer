@@ -28,7 +28,7 @@ public class InscriptionTransferredProcessorTests : InscriptionIndexerTestBase
         await IssueInscriptionAsync(tick);
 
         var inscription = await Query.IssuedInscription(IssuedInscriptionRepository, InscriptionRepository,
-            ObjectMapper, new GetIssuedInscriptionInput()
+            InscriptionOptions, ObjectMapper, new GetIssuedInscriptionInput()
             {
                 ChainId = ChainId,
                 Tick = tick
@@ -54,7 +54,7 @@ public class InscriptionTransferredProcessorTests : InscriptionIndexerTestBase
             await SaveDataAsync();
 
             var inscriptionTransfer = await Query.InscriptionTransfer(TransferRepository, InscriptionRepository,
-                ObjectMapper, new GetInscriptionTransferInput()
+                InscriptionOptions, ObjectMapper, new GetInscriptionTransferInput()
                 {
                     ChainId = ChainId,
                 });
@@ -69,7 +69,7 @@ public class InscriptionTransferredProcessorTests : InscriptionIndexerTestBase
             inscriptionTransfer[0].InscriptionImage.ShouldBe("inscriptionimage");
 
             inscription = await Query.IssuedInscription(IssuedInscriptionRepository, InscriptionRepository,
-                ObjectMapper,
+                InscriptionOptions, ObjectMapper,
                 new GetIssuedInscriptionInput()
                 {
                     ChainId = ChainId,
@@ -102,7 +102,7 @@ public class InscriptionTransferredProcessorTests : InscriptionIndexerTestBase
             await SaveDataAsync();
 
             var inscriptionTransfer = await Query.InscriptionTransfer(TransferRepository, InscriptionRepository,
-                ObjectMapper, new GetInscriptionTransferInput()
+                InscriptionOptions, ObjectMapper, new GetInscriptionTransferInput()
                 {
                     ChainId = ChainId,
                 });
@@ -117,7 +117,7 @@ public class InscriptionTransferredProcessorTests : InscriptionIndexerTestBase
             inscriptionTransfer[0].InscriptionImage.ShouldBe("inscriptionimage");
 
             inscription = await Query.IssuedInscription(IssuedInscriptionRepository, InscriptionRepository,
-                ObjectMapper,
+                InscriptionOptions, ObjectMapper,
                 new GetIssuedInscriptionInput()
                 {
                     ChainId = ChainId,
@@ -150,7 +150,7 @@ public class InscriptionTransferredProcessorTests : InscriptionIndexerTestBase
             await SaveDataAsync();
 
             var inscriptionTransfer = await Query.InscriptionTransfer(TransferRepository, InscriptionRepository,
-                ObjectMapper, new GetInscriptionTransferInput()
+                InscriptionOptions, ObjectMapper, new GetInscriptionTransferInput()
                 {
                     ChainId = ChainId,
                 });
@@ -165,7 +165,7 @@ public class InscriptionTransferredProcessorTests : InscriptionIndexerTestBase
             inscriptionTransfer[0].InscriptionImage.ShouldBe("inscriptionimage");
 
             inscription = await Query.IssuedInscription(IssuedInscriptionRepository, InscriptionRepository,
-                ObjectMapper,
+                InscriptionOptions, ObjectMapper,
                 new GetIssuedInscriptionInput()
                 {
                     ChainId = ChainId,

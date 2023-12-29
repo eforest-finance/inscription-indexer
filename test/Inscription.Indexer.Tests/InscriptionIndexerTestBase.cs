@@ -9,6 +9,7 @@ using AElfIndexer.Grains.State.Client;
 using Forest.Contracts.Inscription;
 using Inscription.Indexer.Processors;
 using Inscription.Indexer.TestBase;
+using Microsoft.Extensions.Options;
 using Volo.Abp.ObjectMapping;
 using Volo.Abp.Threading;
 
@@ -29,6 +30,7 @@ public abstract class InscriptionIndexerTestBase: InscriptionIndexerTestBase<Ins
     protected readonly IAElfIndexerClientEntityRepository<Entities.IssuedInscription, LogEventInfo> IssuedInscriptionRepository;
     protected readonly IAElfIndexerClientEntityRepository<Entities.InscriptionTransfer, LogEventInfo> TransferRepository;
     protected readonly IAElfIndexerClientEntityRepository<Entities.Inscription, LogEventInfo> InscriptionRepository;
+    protected readonly IOptionsSnapshot<InscriptionOptions> InscriptionOptions;
     
     protected Address TestAddress = Address.FromBase58("ooCSxQ7zPw1d4rhQPBqGKB6myvuWbicCiw3jdcoWEMMpa54ea");
     protected string ChainId = "AELF";
@@ -54,6 +56,8 @@ public abstract class InscriptionIndexerTestBase: InscriptionIndexerTestBase<Ins
             GetRequiredService<IAElfIndexerClientEntityRepository<Entities.InscriptionTransfer, LogEventInfo>>();
         InscriptionRepository =
             GetRequiredService<IAElfIndexerClientEntityRepository<Entities.Inscription, LogEventInfo>>();
+        
+        InscriptionOptions = GetRequiredService<IOptionsSnapshot<InscriptionOptions>>();
        
 
         BlockStateSetKey = AsyncHelper.RunSync(async () => await InitializeBlockStateSetAsync(
