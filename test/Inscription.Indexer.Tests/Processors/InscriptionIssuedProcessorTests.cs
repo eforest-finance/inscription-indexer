@@ -21,7 +21,7 @@ public class InscriptionIssuedProcessorTests : InscriptionIndexerTestBase
         await IssueInscriptionAsync(tick);
 
         var inscription = await Query.IssuedInscription(IssuedInscriptionRepository, InscriptionRepository,
-            ObjectMapper, new GetIssuedInscriptionInput()
+            InscriptionOptions, ObjectMapper, new GetIssuedInscriptionInput()
             {
                 ChainId = ChainId,
                 Tick = tick
@@ -34,7 +34,7 @@ public class InscriptionIssuedProcessorTests : InscriptionIndexerTestBase
         inscription.Items[0].Image.ShouldBe("inscriptionimage");
 
         var inscriptionTransfer = await Query.InscriptionTransfer(TransferRepository, InscriptionRepository,
-            ObjectMapper, new GetInscriptionTransferInput()
+            InscriptionOptions, ObjectMapper, new GetInscriptionTransferInput()
             {
                 ChainId = ChainId,
             });

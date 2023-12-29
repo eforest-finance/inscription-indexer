@@ -24,5 +24,6 @@ public class InscriptionIndexerModule : AElfIndexerClientPluginBaseModule<Inscri
         serviceCollection.AddSingleton<IAElfLogEventProcessor<LogEventInfo>, InscriptionTransferredProcessor>();
 
         Configure<ContractInfoOptions>(configuration.GetSection("ContractInfo"));
+        Configure<InscriptionOptions>(configuration.GetSection("Inscription"));
     }
 }
