@@ -85,6 +85,11 @@ public class InscriptionIndexerTestModule : AbpModule
             .Returns(Task.FromResult(new List<Guid>()));
         context.Services.AddSingleton<IBlockScanAppService>(mockBlockScanAppService.Object);
         // context.Services.AddSingleton<IClusterClient>((new Mock<IClusterClient>()).Object);
+        
+        context.Services.Configure<InscriptionOptions>(options =>
+        {
+            options.IgnoreInscription = new List<string> { "TickIgnore" };
+        });
     }
 
     public override void OnPreApplicationInitialization(ApplicationInitializationContext context)

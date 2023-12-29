@@ -26,76 +26,79 @@ namespace Forest.Contracts.Inscription {
           string.Concat(
             "ChppbnNjcmlwdGlvbl9jb250cmFjdC5wcm90bxILSW5zY3JpcHRpb24aD2Fl",
             "bGYvY29yZS5wcm90bxoSYWVsZi9vcHRpb25zLnByb3RvGgthY3MxMi5wcm90",
-            "bxoKYWNzMi5wcm90bxoUYXV0aG9yaXR5X2luZm8ucHJvdG8aHmdvb2dsZS9w",
-            "cm90b2J1Zi93cmFwcGVycy5wcm90bxobZ29vZ2xlL3Byb3RvYnVmL2VtcHR5",
-            "LnByb3RvGhR0b2tlbl9jb250cmFjdC5wcm90byIvCg9Jbml0aWFsaXplSW5w",
-            "dXQSHAoFYWRtaW4YASABKAsyDS5hZWxmLkFkZHJlc3MiZgoWRGVwbG95SW5z",
-            "Y3JpcHRpb25JbnB1dBITCgtzZWVkX3N5bWJvbBgBIAEoCRIMCgR0aWNrGAIg",
-            "ASgJEgsKA21heBgDIAEoAxINCgVsaW1pdBgEIAEoAxINCgVpbWFnZRgFIAEo",
-            "CSIlChVJc3N1ZUluc2NyaXB0aW9uSW5wdXQSDAoEdGljaxgBIAEoCSIrCg5J",
-            "bnNjcmliZWRJbnB1dBIMCgR0aWNrGAEgASgJEgsKA2FtdBgCIAEoAyImCghI",
-            "YXNoTGlzdBIaCgZ2YWx1ZXMYASADKAsyCi5hZWxmLkhhc2giLAoLQWRkcmVz",
-            "c0xpc3QSHQoGdmFsdWVzGAEgAygLMg0uYWVsZi5BZGRyZXNzIksKF0Rpc3Ry",
-            "aWJ1dG9yc0JhbGFuY2VMaXN0EjAKBnZhbHVlcxgBIAMoCzIgLkluc2NyaXB0",
-            "aW9uLkRpc3RyaWJ1dG9yc0JhbGFuY2UiSgoTRGlzdHJpYnV0b3JzQmFsYW5j",
-            "ZRIiCgtkaXN0cmlidXRvchgBIAEoCzINLmFlbGYuQWRkcmVzcxIPCgdiYWxh",
-            "bmNlGAIgASgDIlYKFURlcGxveUluc2NyaXB0aW9uSW5mbxIJCgFwGAEgASgJ",
-            "EgoKAm9wGAIgASgJEgwKBHRpY2sYAyABKAkSCwoDbWF4GAQgASgJEgsKA2xp",
-            "bRgFIAEoCSJHChNNaW50SW5zY3JpcHRpb25JbmZvEgkKAXAYASABKAkSCgoC",
-            "b3AYAiABKAkSDAoEdGljaxgDIAEoCRILCgNhbXQYBCABKAkiWAocQ2hlY2tE",
-            "aXN0cmlidXRvckJhbGFuY2VJbnB1dBIdCgZzZW5kZXIYASABKAsyDS5hZWxm",
-            "LkFkZHJlc3MSDAoEdGljaxgCIAEoCRILCgNhbXQYAyABKAMiuQIKEkluc2Ny",
-            "aXB0aW9uQ3JlYXRlZBIMCgR0aWNrGAMgASgJEhQKDHRvdGFsX3N1cHBseRgE",
-            "IAEoAxIdCgZpc3N1ZXIYBiABKAsyDS5hZWxmLkFkZHJlc3MSFgoOaXNzdWVf",
-            "Y2hhaW5faWQYCCABKAUSPAoYY29sbGVjdGlvbl9leHRlcm5hbF9pbmZvGAkg",
-            "ASgLMhouSW5zY3JpcHRpb24uRXh0ZXJuYWxJbmZvcxI2ChJpdGVtX2V4dGVy",
-            "bmFsX2luZm8YCiABKAsyGi5JbnNjcmlwdGlvbi5FeHRlcm5hbEluZm9zEhwK",
-            "BW93bmVyGAsgASgLMg0uYWVsZi5BZGRyZXNzEg0KBWxpbWl0GAwgASgDEh8K",
-            "CGRlcGxveWVyGA0gASgLMg0uYWVsZi5BZGRyZXNzOgSguxgBInMKDUV4dGVy",
-            "bmFsSW5mb3MSNAoFdmFsdWUYASADKAsyJS5JbnNjcmlwdGlvbi5FeHRlcm5h",
-            "bEluZm9zLlZhbHVlRW50cnkaLAoKVmFsdWVFbnRyeRILCgNrZXkYASABKAkS",
-            "DQoFdmFsdWUYAiABKAk6AjgBImkKEUluc2NyaXB0aW9uSXNzdWVkEgwKBHRp",
-            "Y2sYAiABKAkSCwoDYW10GAMgASgDEhkKAnRvGAQgASgLMg0uYWVsZi5BZGRy",
-            "ZXNzEhgKEGluc2NyaXB0aW9uX2luZm8YBSABKAk6BKC7GAEioAEKFkluc2Ny",
-            "aXB0aW9uVHJhbnNmZXJyZWQSIgoEZnJvbRgBIAEoCzINLmFlbGYuQWRkcmVz",
-            "c0IFiI/1AQESIAoCdG8YAiABKAsyDS5hZWxmLkFkZHJlc3NCBYiP9QEBEhMK",
-            "BHRpY2sYBCABKAlCBYiP9QEBEgsKA2FtdBgFIAEoAxIYChBpbnNjcmlwdGlv",
-            "bl9pbmZvGAYgASgJOgSguxgBKjoKClN5bWJvbFR5cGUSDwoLVU5TUEVDSUZJ",
-            "RUQQABISCg5ORlRfQ09MTEVDVElPThABEgcKA05GVBACMo4KChNJbnNjcmlw",
-            "dGlvbkNvbnRyYWN0EkQKCkluaXRpYWxpemUSHC5JbnNjcmlwdGlvbi5Jbml0",
-            "aWFsaXplSW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABI2CgtDaGFu",
-            "Z2VBZG1pbhINLmFlbGYuQWRkcmVzcxoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0",
-            "eSIAElIKEURlcGxveUluc2NyaXB0aW9uEiMuSW5zY3JpcHRpb24uRGVwbG95",
-            "SW5zY3JpcHRpb25JbnB1dBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAElAK",
-            "EElzc3VlSW5zY3JpcHRpb24SIi5JbnNjcmlwdGlvbi5Jc3N1ZUluc2NyaXB0",
-            "aW9uSW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABJBCghJbnNjcmli",
-            "ZRIbLkluc2NyaXB0aW9uLkluc2NyaWJlZElucHV0GhYuZ29vZ2xlLnByb3Rv",
-            "YnVmLkVtcHR5IgASSAoPTWludEluc2NyaXB0aW9uEhsuSW5zY3JpcHRpb24u",
-            "SW5zY3JpYmVkSW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABJMChNT",
-            "ZXREaXN0cmlidXRvckNvdW50EhsuZ29vZ2xlLnByb3RvYnVmLkludDMyVmFs",
-            "dWUaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABJICg9TZXRJc3N1ZUNoYWlu",
-            "SWQSGy5nb29nbGUucHJvdG9idWYuSW50MzJWYWx1ZRoWLmdvb2dsZS5wcm90",
-            "b2J1Zi5FbXB0eSIAEjgKCEdldEFkbWluEhYuZ29vZ2xlLnByb3RvYnVmLkVt",
-            "cHR5Gg0uYWVsZi5BZGRyZXNzIgWIifcBARJVChFHZXRJbnNjcmliZWRMaW1p",
-            "dBIcLmdvb2dsZS5wcm90b2J1Zi5TdHJpbmdWYWx1ZRobLmdvb2dsZS5wcm90",
-            "b2J1Zi5JbnQ2NFZhbHVlIgWIifcBARJTChJHZXREaXN0cmlidXRvckxpc3QS",
-            "HC5nb29nbGUucHJvdG9idWYuU3RyaW5nVmFsdWUaGC5JbnNjcmlwdGlvbi5B",
-            "ZGRyZXNzTGlzdCIFiIn3AQESYgoVR2V0RGlzdHJpYnV0b3JCYWxhbmNlEhwu",
-            "Z29vZ2xlLnByb3RvYnVmLlN0cmluZ1ZhbHVlGiQuSW5zY3JpcHRpb24uRGlz",
-            "dHJpYnV0b3JzQmFsYW5jZUxpc3QiBYiJ9wEBElEKE0dldERpc3RyaWJ1dG9y",
-            "Q291bnQSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaGy5nb29nbGUucHJvdG9i",
-            "dWYuSW50MzJWYWx1ZSIFiIn3AQESTQoPR2V0SXNzdWVDaGFpbklkEhYuZ29v",
-            "Z2xlLnByb3RvYnVmLkVtcHR5GhsuZ29vZ2xlLnByb3RvYnVmLkludDMyVmFs",
-            "dWUiBYiJ9wEBEmcKF0NoZWNrRGlzdHJpYnV0b3JCYWxhbmNlEikuSW5zY3Jp",
-            "cHRpb24uQ2hlY2tEaXN0cmlidXRvckJhbGFuY2VJbnB1dBoaLmdvb2dsZS5w",
-            "cm90b2J1Zi5Cb29sVmFsdWUiBYiJ9wEBGlmyzPYBNUZvcmVzdC5Db250cmFj",
-            "dHMuSW5zY3JpcHRpb24uSW5zY3JpcHRpb25Db250cmFjdFN0YXRlysr2AQth",
-            "Y3MxMi5wcm90b8rK9gEKYWNzMi5wcm90b0IfqgIcRm9yZXN0LkNvbnRyYWN0",
-            "cy5JbnNjcmlwdGlvbmIGcHJvdG8z"));
+            "bxoKYWNzMi5wcm90bxoeZ29vZ2xlL3Byb3RvYnVmL3dyYXBwZXJzLnByb3Rv",
+            "Ghtnb29nbGUvcHJvdG9idWYvZW1wdHkucHJvdG8iRwoPSW5pdGlhbGl6ZUlu",
+            "cHV0EhwKBWFkbWluGAEgASgLMg0uYWVsZi5BZGRyZXNzEhYKDmlzc3VlX2No",
+            "YWluX2lkGAIgASgFImYKFkRlcGxveUluc2NyaXB0aW9uSW5wdXQSEwoLc2Vl",
+            "ZF9zeW1ib2wYASABKAkSDAoEdGljaxgCIAEoCRILCgNtYXgYAyABKAMSDQoF",
+            "bGltaXQYBCABKAMSDQoFaW1hZ2UYBSABKAkiJQoVSXNzdWVJbnNjcmlwdGlv",
+            "bklucHV0EgwKBHRpY2sYASABKAkiKwoOSW5zY3JpYmVkSW5wdXQSDAoEdGlj",
+            "axgBIAEoCRILCgNhbXQYAiABKAMiJgoISGFzaExpc3QSGgoGdmFsdWVzGAEg",
+            "AygLMgouYWVsZi5IYXNoIiwKC0FkZHJlc3NMaXN0Eh0KBnZhbHVlcxgBIAMo",
+            "CzINLmFlbGYuQWRkcmVzcyJLChdEaXN0cmlidXRvcnNCYWxhbmNlTGlzdBIw",
+            "CgZ2YWx1ZXMYASADKAsyIC5JbnNjcmlwdGlvbi5EaXN0cmlidXRvcnNCYWxh",
+            "bmNlIkoKE0Rpc3RyaWJ1dG9yc0JhbGFuY2USIgoLZGlzdHJpYnV0b3IYASAB",
+            "KAsyDS5hZWxmLkFkZHJlc3MSDwoHYmFsYW5jZRgCIAEoAyJWChVEZXBsb3lJ",
+            "bnNjcmlwdGlvbkluZm8SCQoBcBgBIAEoCRIKCgJvcBgCIAEoCRIMCgR0aWNr",
+            "GAMgASgJEgsKA21heBgEIAEoCRILCgNsaW0YBSABKAkiRwoTTWludEluc2Ny",
+            "aXB0aW9uSW5mbxIJCgFwGAEgASgJEgoKAm9wGAIgASgJEgwKBHRpY2sYAyAB",
+            "KAkSCwoDYW10GAQgASgJIlgKHENoZWNrRGlzdHJpYnV0b3JCYWxhbmNlSW5w",
+            "dXQSHQoGc2VuZGVyGAEgASgLMg0uYWVsZi5BZGRyZXNzEgwKBHRpY2sYAiAB",
+            "KAkSCwoDYW10GAMgASgDIrkCChJJbnNjcmlwdGlvbkNyZWF0ZWQSDAoEdGlj",
+            "axgBIAEoCRIUCgx0b3RhbF9zdXBwbHkYAiABKAMSHQoGaXNzdWVyGAMgASgL",
+            "Mg0uYWVsZi5BZGRyZXNzEhYKDmlzc3VlX2NoYWluX2lkGAQgASgFEjwKGGNv",
+            "bGxlY3Rpb25fZXh0ZXJuYWxfaW5mbxgFIAEoCzIaLkluc2NyaXB0aW9uLkV4",
+            "dGVybmFsSW5mb3MSNgoSaXRlbV9leHRlcm5hbF9pbmZvGAYgASgLMhouSW5z",
+            "Y3JpcHRpb24uRXh0ZXJuYWxJbmZvcxIcCgVvd25lchgHIAEoCzINLmFlbGYu",
+            "QWRkcmVzcxINCgVsaW1pdBgIIAEoAxIfCghkZXBsb3llchgJIAEoCzINLmFl",
+            "bGYuQWRkcmVzczoEoLsYASJzCg1FeHRlcm5hbEluZm9zEjQKBXZhbHVlGAEg",
+            "AygLMiUuSW5zY3JpcHRpb24uRXh0ZXJuYWxJbmZvcy5WYWx1ZUVudHJ5GiwK",
+            "ClZhbHVlRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ASJp",
+            "ChFJbnNjcmlwdGlvbklzc3VlZBIMCgR0aWNrGAEgASgJEgsKA2FtdBgCIAEo",
+            "AxIZCgJ0bxgDIAEoCzINLmFlbGYuQWRkcmVzcxIYChBpbnNjcmlwdGlvbl9p",
+            "bmZvGAQgASgJOgSguxgBIqABChZJbnNjcmlwdGlvblRyYW5zZmVycmVkEiIK",
+            "BGZyb20YASABKAsyDS5hZWxmLkFkZHJlc3NCBYiP9QEBEiAKAnRvGAIgASgL",
+            "Mg0uYWVsZi5BZGRyZXNzQgWIj/UBARITCgR0aWNrGAMgASgJQgWIj/UBARIL",
+            "CgNhbXQYBCABKAMSGAoQaW5zY3JpcHRpb25faW5mbxgFIAEoCToEoLsYASo6",
+            "CgpTeW1ib2xUeXBlEg8KC1VOU1BFQ0lGSUVEEAASEgoOTkZUX0NPTExFQ1RJ",
+            "T04QARIHCgNORlQQAjKrCwoTSW5zY3JpcHRpb25Db250cmFjdBJECgpJbml0",
+            "aWFsaXplEhwuSW5zY3JpcHRpb24uSW5pdGlhbGl6ZUlucHV0GhYuZ29vZ2xl",
+            "LnByb3RvYnVmLkVtcHR5IgASNgoLQ2hhbmdlQWRtaW4SDS5hZWxmLkFkZHJl",
+            "c3MaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABJSChFEZXBsb3lJbnNjcmlw",
+            "dGlvbhIjLkluc2NyaXB0aW9uLkRlcGxveUluc2NyaXB0aW9uSW5wdXQaFi5n",
+            "b29nbGUucHJvdG9idWYuRW1wdHkiABJQChBJc3N1ZUluc2NyaXB0aW9uEiIu",
+            "SW5zY3JpcHRpb24uSXNzdWVJbnNjcmlwdGlvbklucHV0GhYuZ29vZ2xlLnBy",
+            "b3RvYnVmLkVtcHR5IgASQQoISW5zY3JpYmUSGy5JbnNjcmlwdGlvbi5JbnNj",
+            "cmliZWRJbnB1dBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEkgKD01pbnRJ",
+            "bnNjcmlwdGlvbhIbLkluc2NyaXB0aW9uLkluc2NyaWJlZElucHV0GhYuZ29v",
+            "Z2xlLnByb3RvYnVmLkVtcHR5IgASTAoTU2V0RGlzdHJpYnV0b3JDb3VudBIb",
+            "Lmdvb2dsZS5wcm90b2J1Zi5JbnQzMlZhbHVlGhYuZ29vZ2xlLnByb3RvYnVm",
+            "LkVtcHR5IgASSAoPU2V0SXNzdWVDaGFpbklkEhsuZ29vZ2xlLnByb3RvYnVm",
+            "LkludDMyVmFsdWUaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABJKChFTZXRJ",
+            "bWFnZVNpemVMaW1pdBIbLmdvb2dsZS5wcm90b2J1Zi5JbnQzMlZhbHVlGhYu",
+            "Z29vZ2xlLnByb3RvYnVmLkVtcHR5IgASOAoIR2V0QWRtaW4SFi5nb29nbGUu",
+            "cHJvdG9idWYuRW1wdHkaDS5hZWxmLkFkZHJlc3MiBYiJ9wEBElUKEUdldElu",
+            "c2NyaWJlZExpbWl0EhwuZ29vZ2xlLnByb3RvYnVmLlN0cmluZ1ZhbHVlGhsu",
+            "Z29vZ2xlLnByb3RvYnVmLkludDY0VmFsdWUiBYiJ9wEBElMKEkdldERpc3Ry",
+            "aWJ1dG9yTGlzdBIcLmdvb2dsZS5wcm90b2J1Zi5TdHJpbmdWYWx1ZRoYLklu",
+            "c2NyaXB0aW9uLkFkZHJlc3NMaXN0IgWIifcBARJiChVHZXREaXN0cmlidXRv",
+            "ckJhbGFuY2USHC5nb29nbGUucHJvdG9idWYuU3RyaW5nVmFsdWUaJC5JbnNj",
+            "cmlwdGlvbi5EaXN0cmlidXRvcnNCYWxhbmNlTGlzdCIFiIn3AQESUQoTR2V0",
+            "RGlzdHJpYnV0b3JDb3VudBIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRobLmdv",
+            "b2dsZS5wcm90b2J1Zi5JbnQzMlZhbHVlIgWIifcBARJNCg9HZXRJc3N1ZUNo",
+            "YWluSWQSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaGy5nb29nbGUucHJvdG9i",
+            "dWYuSW50MzJWYWx1ZSIFiIn3AQESZwoXQ2hlY2tEaXN0cmlidXRvckJhbGFu",
+            "Y2USKS5JbnNjcmlwdGlvbi5DaGVja0Rpc3RyaWJ1dG9yQmFsYW5jZUlucHV0",
+            "GhouZ29vZ2xlLnByb3RvYnVmLkJvb2xWYWx1ZSIFiIn3AQESTwoRR2V0SW1h",
+            "Z2VTaXplTGltaXQSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaGy5nb29nbGUu",
+            "cHJvdG9idWYuSW50MzJWYWx1ZSIFiIn3AQEaWbLM9gE1Rm9yZXN0LkNvbnRy",
+            "YWN0cy5JbnNjcmlwdGlvbi5JbnNjcmlwdGlvbkNvbnRyYWN0U3RhdGXKyvYB",
+            "C2FjczEyLnByb3Rvysr2AQphY3MyLnByb3RvQh+qAhxGb3Jlc3QuQ29udHJh",
+            "Y3RzLkluc2NyaXB0aW9uYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::AElf.Types.CoreReflection.Descriptor, global::AElf.OptionsReflection.Descriptor, global::AElf.Standards.ACS12.Acs12Reflection.Descriptor, global::AElf.Standards.ACS2.Acs2Reflection.Descriptor, global::AuthorityInfoReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::AElf.Contracts.MultiToken.TokenContractReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::AElf.Types.CoreReflection.Descriptor, global::AElf.OptionsReflection.Descriptor, global::AElf.Standards.ACS12.Acs12Reflection.Descriptor, global::AElf.Standards.ACS2.Acs2Reflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Forest.Contracts.Inscription.SymbolType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Contracts.Inscription.InitializeInput), global::Forest.Contracts.Inscription.InitializeInput.Parser, new[]{ "Admin" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Contracts.Inscription.InitializeInput), global::Forest.Contracts.Inscription.InitializeInput.Parser, new[]{ "Admin", "IssueChainId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Contracts.Inscription.DeployInscriptionInput), global::Forest.Contracts.Inscription.DeployInscriptionInput.Parser, new[]{ "SeedSymbol", "Tick", "Max", "Limit", "Image" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Contracts.Inscription.IssueInscriptionInput), global::Forest.Contracts.Inscription.IssueInscriptionInput.Parser, new[]{ "Tick" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Forest.Contracts.Inscription.InscribedInput), global::Forest.Contracts.Inscription.InscribedInput.Parser, new[]{ "Tick", "Amt" }, null, null, null, null),
@@ -160,6 +163,7 @@ namespace Forest.Contracts.Inscription {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InitializeInput(InitializeInput other) : this() {
       admin_ = other.admin_ != null ? other.admin_.Clone() : null;
+      issueChainId_ = other.issueChainId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -181,6 +185,18 @@ namespace Forest.Contracts.Inscription {
       }
     }
 
+    /// <summary>Field number for the "issue_chain_id" field.</summary>
+    public const int IssueChainIdFieldNumber = 2;
+    private int issueChainId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int IssueChainId {
+      get { return issueChainId_; }
+      set {
+        issueChainId_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -197,6 +213,7 @@ namespace Forest.Contracts.Inscription {
         return true;
       }
       if (!object.Equals(Admin, other.Admin)) return false;
+      if (IssueChainId != other.IssueChainId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -205,6 +222,7 @@ namespace Forest.Contracts.Inscription {
     public override int GetHashCode() {
       int hash = 1;
       if (admin_ != null) hash ^= Admin.GetHashCode();
+      if (IssueChainId != 0) hash ^= IssueChainId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -227,6 +245,10 @@ namespace Forest.Contracts.Inscription {
         output.WriteRawTag(10);
         output.WriteMessage(Admin);
       }
+      if (IssueChainId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(IssueChainId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -241,6 +263,10 @@ namespace Forest.Contracts.Inscription {
         output.WriteRawTag(10);
         output.WriteMessage(Admin);
       }
+      if (IssueChainId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(IssueChainId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -253,6 +279,9 @@ namespace Forest.Contracts.Inscription {
       int size = 0;
       if (admin_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Admin);
+      }
+      if (IssueChainId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(IssueChainId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -271,6 +300,9 @@ namespace Forest.Contracts.Inscription {
           Admin = new global::AElf.Types.Address();
         }
         Admin.MergeFrom(other.Admin);
+      }
+      if (other.IssueChainId != 0) {
+        IssueChainId = other.IssueChainId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -294,6 +326,10 @@ namespace Forest.Contracts.Inscription {
             input.ReadMessage(Admin);
             break;
           }
+          case 16: {
+            IssueChainId = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -314,6 +350,10 @@ namespace Forest.Contracts.Inscription {
               Admin = new global::AElf.Types.Address();
             }
             input.ReadMessage(Admin);
+            break;
+          }
+          case 16: {
+            IssueChainId = input.ReadInt32();
             break;
           }
         }
@@ -2809,7 +2849,7 @@ namespace Forest.Contracts.Inscription {
     }
 
     /// <summary>Field number for the "tick" field.</summary>
-    public const int TickFieldNumber = 3;
+    public const int TickFieldNumber = 1;
     private string tick_ = "";
     /// <summary>
     /// The tick of the inscription.
@@ -2824,7 +2864,7 @@ namespace Forest.Contracts.Inscription {
     }
 
     /// <summary>Field number for the "total_supply" field.</summary>
-    public const int TotalSupplyFieldNumber = 4;
+    public const int TotalSupplyFieldNumber = 2;
     private long totalSupply_;
     /// <summary>
     /// The total supply of the inscription.
@@ -2839,7 +2879,7 @@ namespace Forest.Contracts.Inscription {
     }
 
     /// <summary>Field number for the "issuer" field.</summary>
-    public const int IssuerFieldNumber = 6;
+    public const int IssuerFieldNumber = 3;
     private global::AElf.Types.Address issuer_;
     /// <summary>
     /// The address that has permission to issue the inscription.
@@ -2854,7 +2894,7 @@ namespace Forest.Contracts.Inscription {
     }
 
     /// <summary>Field number for the "issue_chain_id" field.</summary>
-    public const int IssueChainIdFieldNumber = 8;
+    public const int IssueChainIdFieldNumber = 4;
     private int issueChainId_;
     /// <summary>
     /// The chain id of the inscription.
@@ -2869,7 +2909,7 @@ namespace Forest.Contracts.Inscription {
     }
 
     /// <summary>Field number for the "collection_external_info" field.</summary>
-    public const int CollectionExternalInfoFieldNumber = 9;
+    public const int CollectionExternalInfoFieldNumber = 5;
     private global::Forest.Contracts.Inscription.ExternalInfos collectionExternalInfo_;
     /// <summary>
     /// The external information of the inscription collection.
@@ -2884,7 +2924,7 @@ namespace Forest.Contracts.Inscription {
     }
 
     /// <summary>Field number for the "item_external_info" field.</summary>
-    public const int ItemExternalInfoFieldNumber = 10;
+    public const int ItemExternalInfoFieldNumber = 6;
     private global::Forest.Contracts.Inscription.ExternalInfos itemExternalInfo_;
     /// <summary>
     /// The external information of the inscription item.
@@ -2899,7 +2939,7 @@ namespace Forest.Contracts.Inscription {
     }
 
     /// <summary>Field number for the "owner" field.</summary>
-    public const int OwnerFieldNumber = 11;
+    public const int OwnerFieldNumber = 7;
     private global::AElf.Types.Address owner_;
     /// <summary>
     /// The address that owns the inscription.
@@ -2914,7 +2954,7 @@ namespace Forest.Contracts.Inscription {
     }
 
     /// <summary>Field number for the "limit" field.</summary>
-    public const int LimitFieldNumber = 12;
+    public const int LimitFieldNumber = 8;
     private long limit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2926,7 +2966,7 @@ namespace Forest.Contracts.Inscription {
     }
 
     /// <summary>Field number for the "deployer" field.</summary>
-    public const int DeployerFieldNumber = 13;
+    public const int DeployerFieldNumber = 9;
     private global::AElf.Types.Address deployer_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2996,39 +3036,39 @@ namespace Forest.Contracts.Inscription {
       output.WriteRawMessage(this);
     #else
       if (Tick.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(10);
         output.WriteString(Tick);
       }
       if (TotalSupply != 0L) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(16);
         output.WriteInt64(TotalSupply);
       }
       if (issuer_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(26);
         output.WriteMessage(Issuer);
       }
       if (IssueChainId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(32);
         output.WriteInt32(IssueChainId);
       }
       if (collectionExternalInfo_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(42);
         output.WriteMessage(CollectionExternalInfo);
       }
       if (itemExternalInfo_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(50);
         output.WriteMessage(ItemExternalInfo);
       }
       if (owner_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(58);
         output.WriteMessage(Owner);
       }
       if (Limit != 0L) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(64);
         output.WriteInt64(Limit);
       }
       if (deployer_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(74);
         output.WriteMessage(Deployer);
       }
       if (_unknownFields != null) {
@@ -3042,39 +3082,39 @@ namespace Forest.Contracts.Inscription {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Tick.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(10);
         output.WriteString(Tick);
       }
       if (TotalSupply != 0L) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(16);
         output.WriteInt64(TotalSupply);
       }
       if (issuer_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(26);
         output.WriteMessage(Issuer);
       }
       if (IssueChainId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(32);
         output.WriteInt32(IssueChainId);
       }
       if (collectionExternalInfo_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(42);
         output.WriteMessage(CollectionExternalInfo);
       }
       if (itemExternalInfo_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(50);
         output.WriteMessage(ItemExternalInfo);
       }
       if (owner_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(58);
         output.WriteMessage(Owner);
       }
       if (Limit != 0L) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(64);
         output.WriteInt64(Limit);
       }
       if (deployer_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(74);
         output.WriteMessage(Deployer);
       }
       if (_unknownFields != null) {
@@ -3183,51 +3223,51 @@ namespace Forest.Contracts.Inscription {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 10: {
             Tick = input.ReadString();
             break;
           }
-          case 32: {
+          case 16: {
             TotalSupply = input.ReadInt64();
             break;
           }
-          case 50: {
+          case 26: {
             if (issuer_ == null) {
               Issuer = new global::AElf.Types.Address();
             }
             input.ReadMessage(Issuer);
             break;
           }
-          case 64: {
+          case 32: {
             IssueChainId = input.ReadInt32();
             break;
           }
-          case 74: {
+          case 42: {
             if (collectionExternalInfo_ == null) {
               CollectionExternalInfo = new global::Forest.Contracts.Inscription.ExternalInfos();
             }
             input.ReadMessage(CollectionExternalInfo);
             break;
           }
-          case 82: {
+          case 50: {
             if (itemExternalInfo_ == null) {
               ItemExternalInfo = new global::Forest.Contracts.Inscription.ExternalInfos();
             }
             input.ReadMessage(ItemExternalInfo);
             break;
           }
-          case 90: {
+          case 58: {
             if (owner_ == null) {
               Owner = new global::AElf.Types.Address();
             }
             input.ReadMessage(Owner);
             break;
           }
-          case 96: {
+          case 64: {
             Limit = input.ReadInt64();
             break;
           }
-          case 106: {
+          case 74: {
             if (deployer_ == null) {
               Deployer = new global::AElf.Types.Address();
             }
@@ -3249,51 +3289,51 @@ namespace Forest.Contracts.Inscription {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 10: {
             Tick = input.ReadString();
             break;
           }
-          case 32: {
+          case 16: {
             TotalSupply = input.ReadInt64();
             break;
           }
-          case 50: {
+          case 26: {
             if (issuer_ == null) {
               Issuer = new global::AElf.Types.Address();
             }
             input.ReadMessage(Issuer);
             break;
           }
-          case 64: {
+          case 32: {
             IssueChainId = input.ReadInt32();
             break;
           }
-          case 74: {
+          case 42: {
             if (collectionExternalInfo_ == null) {
               CollectionExternalInfo = new global::Forest.Contracts.Inscription.ExternalInfos();
             }
             input.ReadMessage(CollectionExternalInfo);
             break;
           }
-          case 82: {
+          case 50: {
             if (itemExternalInfo_ == null) {
               ItemExternalInfo = new global::Forest.Contracts.Inscription.ExternalInfos();
             }
             input.ReadMessage(ItemExternalInfo);
             break;
           }
-          case 90: {
+          case 58: {
             if (owner_ == null) {
               Owner = new global::AElf.Types.Address();
             }
             input.ReadMessage(Owner);
             break;
           }
-          case 96: {
+          case 64: {
             Limit = input.ReadInt64();
             break;
           }
-          case 106: {
+          case 74: {
             if (deployer_ == null) {
               Deployer = new global::AElf.Types.Address();
             }
@@ -3533,7 +3573,7 @@ namespace Forest.Contracts.Inscription {
     }
 
     /// <summary>Field number for the "tick" field.</summary>
-    public const int TickFieldNumber = 2;
+    public const int TickFieldNumber = 1;
     private string tick_ = "";
     /// <summary>
     /// The tick of issued inscription.
@@ -3548,7 +3588,7 @@ namespace Forest.Contracts.Inscription {
     }
 
     /// <summary>Field number for the "amt" field.</summary>
-    public const int AmtFieldNumber = 3;
+    public const int AmtFieldNumber = 2;
     private long amt_;
     /// <summary>
     /// The amount of issued inscription.
@@ -3563,7 +3603,7 @@ namespace Forest.Contracts.Inscription {
     }
 
     /// <summary>Field number for the "to" field.</summary>
-    public const int ToFieldNumber = 4;
+    public const int ToFieldNumber = 3;
     private global::AElf.Types.Address to_;
     /// <summary>
     /// The issued target address.
@@ -3578,7 +3618,7 @@ namespace Forest.Contracts.Inscription {
     }
 
     /// <summary>Field number for the "inscription_info" field.</summary>
-    public const int InscriptionInfoFieldNumber = 5;
+    public const int InscriptionInfoFieldNumber = 4;
     private string inscriptionInfo_ = "";
     /// <summary>
     /// p:"aelf",op:"deploy","tick:"ELFS","max":"210000","lim":"100"
@@ -3641,19 +3681,19 @@ namespace Forest.Contracts.Inscription {
       output.WriteRawMessage(this);
     #else
       if (Tick.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(10);
         output.WriteString(Tick);
       }
       if (Amt != 0L) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteInt64(Amt);
       }
       if (to_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteMessage(To);
       }
       if (InscriptionInfo.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(34);
         output.WriteString(InscriptionInfo);
       }
       if (_unknownFields != null) {
@@ -3667,19 +3707,19 @@ namespace Forest.Contracts.Inscription {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Tick.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(10);
         output.WriteString(Tick);
       }
       if (Amt != 0L) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteInt64(Amt);
       }
       if (to_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteMessage(To);
       }
       if (InscriptionInfo.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(34);
         output.WriteString(InscriptionInfo);
       }
       if (_unknownFields != null) {
@@ -3746,22 +3786,22 @@ namespace Forest.Contracts.Inscription {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 10: {
             Tick = input.ReadString();
             break;
           }
-          case 24: {
+          case 16: {
             Amt = input.ReadInt64();
             break;
           }
-          case 34: {
+          case 26: {
             if (to_ == null) {
               To = new global::AElf.Types.Address();
             }
             input.ReadMessage(To);
             break;
           }
-          case 42: {
+          case 34: {
             InscriptionInfo = input.ReadString();
             break;
           }
@@ -3780,22 +3820,22 @@ namespace Forest.Contracts.Inscription {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 10: {
             Tick = input.ReadString();
             break;
           }
-          case 24: {
+          case 16: {
             Amt = input.ReadInt64();
             break;
           }
-          case 34: {
+          case 26: {
             if (to_ == null) {
               To = new global::AElf.Types.Address();
             }
             input.ReadMessage(To);
             break;
           }
-          case 42: {
+          case 34: {
             InscriptionInfo = input.ReadString();
             break;
           }
@@ -3885,7 +3925,7 @@ namespace Forest.Contracts.Inscription {
     }
 
     /// <summary>Field number for the "tick" field.</summary>
-    public const int TickFieldNumber = 4;
+    public const int TickFieldNumber = 3;
     private string tick_ = "";
     /// <summary>
     /// The tick of the transferred inscription.
@@ -3900,7 +3940,7 @@ namespace Forest.Contracts.Inscription {
     }
 
     /// <summary>Field number for the "amt" field.</summary>
-    public const int AmtFieldNumber = 5;
+    public const int AmtFieldNumber = 4;
     private long amt_;
     /// <summary>
     /// The amount of the transferred inscription.
@@ -3915,7 +3955,7 @@ namespace Forest.Contracts.Inscription {
     }
 
     /// <summary>Field number for the "inscription_info" field.</summary>
-    public const int InscriptionInfoFieldNumber = 6;
+    public const int InscriptionInfoFieldNumber = 5;
     private string inscriptionInfo_ = "";
     /// <summary>
     /// p:"aelf",op:"mint",tick:"ELFS",amt:amt
@@ -3988,15 +4028,15 @@ namespace Forest.Contracts.Inscription {
         output.WriteMessage(To);
       }
       if (Tick.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Tick);
       }
       if (Amt != 0L) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteInt64(Amt);
       }
       if (InscriptionInfo.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(42);
         output.WriteString(InscriptionInfo);
       }
       if (_unknownFields != null) {
@@ -4018,15 +4058,15 @@ namespace Forest.Contracts.Inscription {
         output.WriteMessage(To);
       }
       if (Tick.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Tick);
       }
       if (Amt != 0L) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteInt64(Amt);
       }
       if (InscriptionInfo.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(42);
         output.WriteString(InscriptionInfo);
       }
       if (_unknownFields != null) {
@@ -4116,15 +4156,15 @@ namespace Forest.Contracts.Inscription {
             input.ReadMessage(To);
             break;
           }
-          case 34: {
+          case 26: {
             Tick = input.ReadString();
             break;
           }
-          case 40: {
+          case 32: {
             Amt = input.ReadInt64();
             break;
           }
-          case 50: {
+          case 42: {
             InscriptionInfo = input.ReadString();
             break;
           }
@@ -4157,15 +4197,15 @@ namespace Forest.Contracts.Inscription {
             input.ReadMessage(To);
             break;
           }
-          case 34: {
+          case 26: {
             Tick = input.ReadString();
             break;
           }
-          case 40: {
+          case 32: {
             Amt = input.ReadInt64();
             break;
           }
-          case 50: {
+          case 42: {
             InscriptionInfo = input.ReadString();
             break;
           }
