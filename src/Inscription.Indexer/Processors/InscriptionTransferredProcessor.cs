@@ -22,16 +22,21 @@ public class InscriptionTransferredProcessor : InscriptionProcessorBase<Inscript
         
         var inscriptionId = IdGenerateHelper.GetId(context.ChainId, eventValue.Tick);
         var inscription = await IssuedInscriptionRepository.GetFromBlockStateSetAsync(inscriptionId, context.ChainId);
-        inscription.MintedAmt += eventValue.Amt;
+        inscription.MintedAmt = inscription.MintedAmt + eventValue.Amt;
         
-        if (inscription.MintedAmt == inscription.Amt)
+        if (inscription.MintedAmt >= inscription.Amt)
         {
+            inscription.MintedAmt = inscription.Amt;
             inscription.Progress = 100;
             inscription.IsCompleted= true;
         }
         else
         {
             inscription.Progress = inscription.MintedAmt * 100 / (float)inscription.Amt;
+            if (inscription.Progress > 100)
+            {
+                inscription.Progress = 100;
+            }
         }
 
         ObjectMapper.Map(context, inscription);

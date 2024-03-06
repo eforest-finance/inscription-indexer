@@ -13,7 +13,7 @@ public class InscriptionIndexerModule : AElfIndexerClientPluginBaseModule<Inscri
     InscriptionIndexerSchema, Query>
 {
     protected override string ClientId { get; } = "AElfIndexer_Inscription";
-    protected override string Version { get; } = "71d48a7804674c8a84e90db08c4903d1";
+    protected override string Version { get; } = "eb2c712e46eb49168d7d27ae793029ab";
 
     protected override void ConfigureServices(IServiceCollection serviceCollection)
     {
