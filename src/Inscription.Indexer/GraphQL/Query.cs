@@ -1,13 +1,6 @@
-using AElfIndexer.Client;
-using AElfIndexer.Client.Providers;
-using AElfIndexer.Grains;
-using AElfIndexer.Grains.Grain.Client;
-using AElfIndexer.Grains.State.Client;
+using AeFinder.Sdk;
 using GraphQL;
-using Microsoft.Extensions.Options;
-using Nest;
-using Orleans;
-using Volo.Abp.Application.Dtos;
+using Inscription.Indexer.Constants;
 using Volo.Abp.ObjectMapping;
 
 namespace Inscription.Indexer.GraphQL;
@@ -18,86 +11,90 @@ public class Query
     private const string InscriptionImageKey = "inscription_image";
 
     public static async Task<List<InscriptionDto>> Inscription(
-        [FromServices] IAElfIndexerClientEntityRepository<Entities.Inscription, LogEventInfo> repository,
+        [FromServices] IReadOnlyRepository<Entities.Inscription> repository,
         [FromServices] IObjectMapper objectMapper, GetInscriptionInput input)
     {
         input.Validate();
 
-        var mustQuery = new List<Func<QueryContainerDescriptor<Entities.Inscription>, QueryContainer>>();
+        var queryable = await repository.GetQueryableAsync();
+        
         if (!input.ChainId.IsNullOrWhiteSpace())
         {
-            mustQuery.Add(q => q.Term(i => i.Field(f => f.ChainId).Value(input.ChainId)));
+            queryable = queryable.Where(i => i.ChainId == input.ChainId);
         }
         
         if (!input.Tick.IsNullOrWhiteSpace())
         {
-            mustQuery.Add(q => q.Term(i => i.Field(f => f.Tick).Value(input.Tick)));
+            queryable = queryable.Where(i => i.Tick == input.Tick);
         }
 
         if (input.BeginBlockHeight.HasValue)
         {
-            mustQuery.Add(q => q.Range(i => i.Field(f => f.BlockHeight).GreaterThanOrEquals(input.BeginBlockHeight.Value)));
+            queryable = queryable.Where(i => i.BlockHeight >= input.BeginBlockHeight.Value);
         }
         
         if (input.EndBlockHeight.HasValue)
         {
-            mustQuery.Add(q => q.Range(i => i.Field(f => f.BlockHeight).LessThanOrEquals(input.EndBlockHeight.Value)));
+            queryable = queryable.Where(i => i.BlockHeight <= input.EndBlockHeight.Value);
         }
 
-        QueryContainer Filter(QueryContainerDescriptor<Entities.Inscription> f) => f.Bool(b => b.Must(mustQuery));
-
-        var result = await repository.GetListAsync(Filter, sortExp: k => k.BlockHeight,
-            sortType: SortOrder.Ascending, limit: input.MaxResultCount.Value, skip: input.SkipCount.Value);
-        return objectMapper.Map<List<Entities.Inscription>, List<InscriptionDto>>(result.Item2);
+        var result = queryable
+            .OrderBy(i => i.BlockHeight)
+            .Skip(input.SkipCount.Value)
+            .Take(input.MaxResultCount.Value)
+            .ToList();
+       
+        return objectMapper.Map<List<Entities.Inscription>, List<InscriptionDto>>(result);
     }
 
     public static async Task<PagedResultDto<IssuedInscriptionDto>> IssuedInscription(
-        [FromServices] IAElfIndexerClientEntityRepository<Entities.IssuedInscription, LogEventInfo> issuedInscriptionRepository,
-        [FromServices] IAElfIndexerClientEntityRepository<Entities.Inscription, LogEventInfo> inscriptionRepository,
-        [FromServices] IOptionsSnapshot<InscriptionOptions> inscriptionOptions,
+        [FromServices] IReadOnlyRepository<Entities.IssuedInscription> issuedInscriptionRepository,
+        [FromServices] IReadOnlyRepository<Entities.Inscription> inscriptionRepository,
         [FromServices] IObjectMapper objectMapper, GetIssuedInscriptionInput input)
     {
         input.Validate();
-        
-        var mustQuery = new List<Func<QueryContainerDescriptor<Entities.IssuedInscription>, QueryContainer>>();
+        var issuedInscriptionQueryable = await issuedInscriptionRepository.GetQueryableAsync();
+
         if (!input.ChainId.IsNullOrWhiteSpace())
         {
-            mustQuery.Add(q => q.Term(i => i.Field(f => f.ChainId).Value(input.ChainId)));
+            issuedInscriptionQueryable = issuedInscriptionQueryable.Where(i => i.ChainId == input.ChainId);
         }
         
         if (!input.Tick.IsNullOrWhiteSpace())
         {
-            mustQuery.Add(q => q.Term(i => i.Field(f => f.Tick).Value(input.Tick)));
+            issuedInscriptionQueryable = issuedInscriptionQueryable.Where(i => i.Tick == input.Tick);
         }
         
         if (input.IsCompleted.HasValue)
         {
-            mustQuery.Add(q => q.Term(i => i.Field(f => f.IsCompleted).Value(input.IsCompleted.Value)));
-        }
-        
-        if (inscriptionOptions.Value.IgnoreInscription.Count > 0)
-        {
-            var mustNotQuery = new List<Func<QueryContainerDescriptor<Entities.IssuedInscription>, QueryContainer>>();
-            foreach (var ignoreTick in inscriptionOptions.Value.IgnoreInscription)
-            {
-                mustNotQuery.Add(q => q.Term(i => i.Field(f => f.Tick).Value(ignoreTick)));
-            }
-            mustQuery.Add(q=>q.Bool(b=>b.MustNot(mustNotQuery)));
+            issuedInscriptionQueryable = issuedInscriptionQueryable.Where(i => i.IsCompleted == input.IsCompleted.Value);
         }
 
-        QueryContainer Filter(QueryContainerDescriptor<Entities.IssuedInscription> f) => f.Bool(b => b.Must(mustQuery));
-        
-        var issuedInscriptions = await issuedInscriptionRepository.GetListAsync(Filter, sortExp: k => k.HolderCount,
-            sortType: SortOrder.Descending, limit: input.MaxResultCount.Value, skip: input.SkipCount.Value);
+        if (InscriptionIndexerConstants.IgnoreInscription.Count > 0)
+        {
+            for (int i = 0; i < InscriptionIndexerConstants.IgnoreInscription.Count; i++)
+            {
+                var ignoreTick = InscriptionIndexerConstants.IgnoreInscription[i];
+                issuedInscriptionQueryable = issuedInscriptionQueryable.Where(i => i.Tick !=ignoreTick);
+            }
+        }
+
+
+        var issuedInscriptions =  issuedInscriptionQueryable
+            .OrderByDescending(i => i.HolderCount)
+            .Skip(input.SkipCount.Value)
+            .Take(input.MaxResultCount.Value)
+            .ToList();
         var totalCount = 0L;
         var issuedInscriptionDtos =
-            objectMapper.Map<List<Entities.IssuedInscription>, List<IssuedInscriptionDto>>(issuedInscriptions.Item2);
+            objectMapper.Map<List<Entities.IssuedInscription>, List<IssuedInscriptionDto>>(issuedInscriptions);
         
-        if (issuedInscriptions.Item2.Count != 0)
+        if (issuedInscriptions.Count != 0)
         {
-            totalCount = (await issuedInscriptionRepository.CountAsync(Filter)).Count;
-            
-            var images = await GetInscriptionImageAsync(inscriptionRepository, issuedInscriptions.Item2.Select(i => i.Tick).ToList());
+            totalCount = issuedInscriptionQueryable.Count();
+
+            var images = await GetInscriptionImageAsync(inscriptionRepository,
+                issuedInscriptions.Select(i => i.Tick).ToList());
             foreach (var issuedInscriptionDto in issuedInscriptionDtos)
             {
                 if (images.TryGetValue(issuedInscriptionDto.Tick, out var image))
@@ -111,37 +108,34 @@ public class Query
     }
 
     public static async Task<List<InscriptionTransferDto>> InscriptionTransfer(
-        [FromServices] IAElfIndexerClientEntityRepository<Entities.InscriptionTransfer, LogEventInfo> transferRepository,
-        [FromServices] IAElfIndexerClientEntityRepository<Entities.Inscription, LogEventInfo> inscriptionRepository,
-        [FromServices] IOptionsSnapshot<InscriptionOptions> inscriptionOptions,
+        [FromServices] IReadOnlyRepository<Entities.InscriptionTransfer> transferRepository,
+        [FromServices] IReadOnlyRepository<Entities.Inscription> inscriptionRepository,
         [FromServices] IObjectMapper objectMapper, GetInscriptionTransferInput input)
     {
         input.Validate();
 
-        var mustQuery = new List<Func<QueryContainerDescriptor<Entities.InscriptionTransfer>, QueryContainer>>();
+        var transferQueryable = await transferRepository.GetQueryableAsync();
+        
         if (!input.ChainId.IsNullOrWhiteSpace())
         {
-            mustQuery.Add(q => q.Term(i => i.Field(f => f.ChainId).Value(input.ChainId)));
+            transferQueryable = transferQueryable.Where(i => i.ChainId == input.ChainId);
         }
         
-        if (inscriptionOptions.Value.IgnoreInscription.Count > 0)
+        if (InscriptionIndexerConstants.IgnoreInscription.Count > 0)
         {
-            var mustNotQuery = new List<Func<QueryContainerDescriptor<Entities.InscriptionTransfer>, QueryContainer>>();
-            foreach (var ignoreTick in inscriptionOptions.Value.IgnoreInscription)
+            foreach (var ignoreTick in InscriptionIndexerConstants.IgnoreInscription)
             {
-                mustNotQuery.Add(q => q.Term(i => i.Field(f => f.Tick).Value(ignoreTick)));
+                transferQueryable = transferQueryable.Where(i => i.Tick != ignoreTick);
             }
-            mustQuery.Add(q=>q.Bool(b=>b.MustNot(mustNotQuery)));
         }
 
-        QueryContainer Filter(QueryContainerDescriptor<Entities.InscriptionTransfer> f) =>
-            f.Bool(b => b.Must(mustQuery));
-
-        var transfers = await transferRepository.GetListAsync(Filter, sortExp: k => k.BlockTime,
-            sortType: SortOrder.Descending, limit: input.MaxResultCount.Value, skip: input.SkipCount.Value);
+        var transfers = transferQueryable.OrderByDescending(i => i.BlockTime)
+            .Skip(input.SkipCount.Value)
+            .Take(input.MaxResultCount.Value)
+            .ToList();
 
         var inscriptionTransferDtos =
-            objectMapper.Map<List<Entities.InscriptionTransfer>, List<InscriptionTransferDto>>(transfers.Item2);
+            objectMapper.Map<List<Entities.InscriptionTransfer>, List<InscriptionTransferDto>>(transfers);
         if (inscriptionTransferDtos.Count > 0)
         {
             var images = await GetInscriptionImageAsync(inscriptionRepository,
@@ -158,32 +152,32 @@ public class Query
         return inscriptionTransferDtos;
     }
 
-    public static async Task<SyncStateDto> SyncState(
-        [FromServices] IClusterClient clusterClient, [FromServices] IAElfIndexerClientInfoProvider clientInfoProvider,
-        [FromServices] IObjectMapper objectMapper, GetSyncStateDto input)
-    {
-        var version = clientInfoProvider.GetVersion();
-        var clientId = clientInfoProvider.GetClientId();
-        var blockStateSetInfoGrain =
-            clusterClient.GetGrain<IBlockStateSetInfoGrain>(
-                GrainIdHelper.GenerateGrainId("BlockStateSetInfo", clientId, input.ChainId, version));
-        var confirmedHeight = await blockStateSetInfoGrain.GetConfirmedBlockHeight(input.FilterType);
-        return new SyncStateDto
-        {
-            ConfirmedBlockHeight = confirmedHeight
-        };
-    }
+    // public static async Task<SyncStateDto> SyncState(
+    //     [FromServices] IClusterClient clusterClient, [FromServices] IAElfIndexerClientInfoProvider clientInfoProvider,
+    //     [FromServices] IObjectMapper objectMapper, GetSyncStateDto input)
+    // {
+    //     var version = clientInfoProvider.GetVersion();
+    //     var clientId = clientInfoProvider.GetClientId();
+    //     var blockStateSetInfoGrain =
+    //         clusterClient.GetGrain<IBlockStateSetInfoGrain>(
+    //             GrainIdHelper.GenerateGrainId("BlockStateSetInfo", clientId, input.ChainId, version));
+    //     var confirmedHeight = await blockStateSetInfoGrain.GetConfirmedBlockHeight(input.FilterType);
+    //     return new SyncStateDto
+    //     {
+    //         ConfirmedBlockHeight = confirmedHeight
+    //     };
+    // }
     
     private static async Task<Dictionary<string,string>> GetInscriptionImageAsync(
-        IAElfIndexerClientEntityRepository<Entities.Inscription, LogEventInfo> inscriptionRepository,
+        IReadOnlyRepository<Entities.Inscription> inscriptionRepository,
         List<string> ticks)
     {
-        var inscriptionMustQuery = new List<Func<QueryContainerDescriptor<Entities.Inscription>, QueryContainer>>();
-        inscriptionMustQuery.Add(q => q.Ids(i => i.Values(ticks.Select(i => IdGenerateHelper.GetId(MainChainId, i)))));
-        QueryContainer inscriptionFilter(QueryContainerDescriptor<Entities.Inscription> f) => f.Bool(b => b.Must(inscriptionMustQuery));
-        var inscriptions = await inscriptionRepository.GetListAsync(inscriptionFilter);
+        var inscriptionQueryable = await inscriptionRepository.GetQueryableAsync();
+
+        inscriptionQueryable = inscriptionQueryable.Where(i => ticks.Contains(IdGenerateHelper.GetId(MainChainId, i.Id)));
+        var inscriptions = inscriptionQueryable.ToList();
         var result = new Dictionary<string, string>();
-        foreach (var inscription in inscriptions.Item2)
+        foreach (var inscription in inscriptions)
         {
             if (inscription.CollectionExternalInfo.TryGetValue(InscriptionImageKey, out var image))
             {

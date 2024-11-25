@@ -1,29 +1,36 @@
-using AElfIndexer.Client.Handlers;
-using AElfIndexer.Grains.State.Client;
+using AeFinder.Sdk.Logging;
+using AeFinder.Sdk.Processor;
 using Forest.Contracts.Inscription;
-using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using Volo.Abp.ObjectMapping;
 
 namespace Inscription.Indexer.Processors;
 
-public class InscriptionCreatedProcessor : InscriptionProcessorBase<InscriptionCreated>
+public class InscriptionCreatedProcessor : LogEventProcessorBase<InscriptionCreated>
 {
 
-    public InscriptionCreatedProcessor(
-        ILogger<AElfLogEventProcessorBase<InscriptionCreated, LogEventInfo>> logger) : base(logger)
+    private readonly IObjectMapper _objectMapper;
+    public InscriptionCreatedProcessor(IObjectMapper objectMapper)
     {
+        _objectMapper = objectMapper;
     }
 
-    protected override async Task HandleEventAsync(InscriptionCreated eventValue, LogEventContext context)
+    public override string GetContractAddress(string chainId)
     {
+        return ContractInfoHelper.GetInscriptionContractAddress(chainId);
+    }
+    
+    public async override Task ProcessAsync(InscriptionCreated eventValue, LogEventContext context)
+    {
+        Logger.LogDebug("InscriptionCreated eventValue {A}",JsonConvert.SerializeObject(eventValue));
         var id = IdGenerateHelper.GetId(context.ChainId, eventValue.Tick);
         var inscription = new Entities.Inscription
         {
             Id = id
         };
         
-        ObjectMapper.Map(context, inscription);
-        ObjectMapper.Map(eventValue, inscription);
-        
-        await InscriptionRepository.AddOrUpdateAsync(inscription);
+        _objectMapper.Map(context, inscription);
+        _objectMapper.Map(eventValue, inscription);
+        await SaveEntityAsync(inscription);
     }
 }

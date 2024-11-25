@@ -1,10 +1,12 @@
-using AElf.Indexing.Elasticsearch;
+using AeFinder.Sdk.Entities;
 using Nest;
 
 namespace Inscription.Indexer.Entities;
 
-public class IssuedInscription : InscriptionIndexerEntity<string>, IIndexBuild
+public class IssuedInscription : AeFinderEntity, IAeFinderEntity
 {
+    [Keyword] public override string Id { get; set; }
+    
     public long Amt { get; set; }
     [Keyword]
     public string Tick { get; set; }
@@ -18,4 +20,19 @@ public class IssuedInscription : InscriptionIndexerEntity<string>, IIndexBuild
     public bool IsCompleted { get; set; }
     [Keyword]
     public string IssuedTransactionId { get; set; }
+    
+    public DateTime BlockTime { get; set; }
+    
+    [Keyword]
+    public string ChainId { get; set; }
+
+    [Keyword]
+    public string BlockHash { get; set; }
+
+    public long BlockHeight { get; set; }
+
+    [Keyword]
+    public string PreviousBlockHash { get; set; }
+
+    public bool IsDeleted { get; set; }
 }
