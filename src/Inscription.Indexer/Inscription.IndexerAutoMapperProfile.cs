@@ -17,7 +17,11 @@ public class InscriptionIndexerAutoMapperProfile : Profile
             .ForMember(destination => destination.BlockHeight,
                 opt => opt.MapFrom(source => source.Block.BlockHeight))
             .ForMember(destination => destination.BlockHash,
-                opt => opt.MapFrom(source => source.Block.BlockHash));;
+                opt => opt.MapFrom(source => source.Block.BlockHash))
+            .ForMember(destination => destination.PreviousBlockHash,
+                opt => opt.MapFrom(source => source.Block.PreviousBlockHash))
+            .ForMember(destination => destination.BlockTime,
+                opt => opt.MapFrom(source => source.Block.BlockTime));
         CreateMap<InscriptionCreated, Entities.Inscription>()
             .ForMember(d => d.CollectionExternalInfo,
                 opt => opt.MapFrom(s => s.CollectionExternalInfo.Value.ToDictionary(o => o.Key, o => o.Value)))
@@ -46,7 +50,11 @@ public class InscriptionIndexerAutoMapperProfile : Profile
             .ForMember(destination => destination.BlockHeight,
                 opt => opt.MapFrom(source => source.Block.BlockHeight))
             .ForMember(destination => destination.BlockHash,
-                opt => opt.MapFrom(source => source.Block.BlockHash));;
+                opt => opt.MapFrom(source => source.Block.BlockHash))
+            .ForMember(destination => destination.PreviousBlockHash,
+                opt => opt.MapFrom(source => source.Block.PreviousBlockHash))
+            .ForMember(destination => destination.BlockTime,
+                opt => opt.MapFrom(source => source.Block.BlockTime));
         CreateMap<InscriptionIssued, Entities.IssuedInscription>();
         CreateMap<Entities.IssuedInscription, IssuedInscriptionDto>();
         
@@ -54,7 +62,11 @@ public class InscriptionIndexerAutoMapperProfile : Profile
             .ForMember(destination => destination.BlockHeight,
                 opt => opt.MapFrom(source => source.Block.BlockHeight))
             .ForMember(destination => destination.BlockHash,
-                opt => opt.MapFrom(source => source.Block.BlockHash));;
+                opt => opt.MapFrom(source => source.Block.BlockHash))
+            .ForMember(destination => destination.PreviousBlockHash,
+                opt => opt.MapFrom(source => source.Block.PreviousBlockHash))
+            .ForMember(destination => destination.BlockTime,
+                opt => opt.MapFrom(source => source.Block.BlockTime));
         CreateMap<Entities.InscriptionTransfer, InscriptionTransferDto>();
         
         CreateMap<LogEventContext, Entities.InscriptionHolder>();
