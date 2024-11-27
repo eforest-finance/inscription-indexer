@@ -1,6 +1,7 @@
 using AeFinder.Sdk.Logging;
 using AeFinder.Sdk.Processor;
 using Forest.Contracts.Inscription;
+using Newtonsoft.Json;
 using Volo.Abp.ObjectMapping;
 
 namespace Inscription.Indexer.Processors;
@@ -24,6 +25,7 @@ public class InscriptionIssuedProcessor : LogEventProcessorBase<InscriptionIssue
         if (eventValue.To == null || eventValue.To.Value.Length == 0)
         { 
             Logger.LogError("eventValue.To is null");
+            Logger.LogError("InscriptionIssuedProcessor eventValue={A}",JsonConvert.SerializeObject(eventValue));
             return;
         }
         var inscription = new Entities.IssuedInscription
