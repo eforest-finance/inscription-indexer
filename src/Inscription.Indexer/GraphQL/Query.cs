@@ -8,6 +8,7 @@ namespace Inscription.Indexer.GraphQL;
 public class Query
 {
     private const string MainChainId = "AELF";
+    private const string MainChainIdPre = "AELF-";
     private const string InscriptionImageKey = "inscription_image";
 
     public static async Task<List<InscriptionDto>> Inscription(
@@ -95,8 +96,9 @@ public class Query
 
             var images = await GetInscriptionImageAsync(inscriptionRepository,
                 issuedInscriptions.Select(i => i.Tick).ToList());
-            foreach (var issuedInscriptionDto in issuedInscriptionDtos)
+            for (var i = 0; i < issuedInscriptionDtos.Count; i++)
             {
+                var issuedInscriptionDto = issuedInscriptionDtos[i];
                 if (images.TryGetValue(issuedInscriptionDto.Tick, out var image))
                 {
                     issuedInscriptionDto.Image = image;
@@ -112,19 +114,22 @@ public class Query
         [FromServices] IReadOnlyRepository<Entities.Inscription> inscriptionRepository,
         [FromServices] IObjectMapper objectMapper, GetInscriptionTransferInput input)
     {
+        
         input.Validate();
 
         var transferQueryable = await transferRepository.GetQueryableAsync();
+        
         
         if (!input.ChainId.IsNullOrWhiteSpace())
         {
             transferQueryable = transferQueryable.Where(i => i.ChainId == input.ChainId);
         }
-        
+
         if (InscriptionIndexerConstants.IgnoreInscription.Count > 0)
         {
-            foreach (var ignoreTick in InscriptionIndexerConstants.IgnoreInscription)
+            for (var i = 0; i < InscriptionIndexerConstants.IgnoreInscription.Count; i++)
             {
+                var ignoreTick = InscriptionIndexerConstants.IgnoreInscription[i];
                 transferQueryable = transferQueryable.Where(i => i.Tick != ignoreTick);
             }
         }
@@ -136,12 +141,14 @@ public class Query
 
         var inscriptionTransferDtos =
             objectMapper.Map<List<Entities.InscriptionTransfer>, List<InscriptionTransferDto>>(transfers);
+
         if (inscriptionTransferDtos.Count > 0)
         {
             var images = await GetInscriptionImageAsync(inscriptionRepository,
                 inscriptionTransferDtos.Select(i => i.Tick).ToList());
-            foreach (var inscriptionTransferDto in inscriptionTransferDtos)
+            for (var i = 0; i < inscriptionTransferDtos.Count(); i++)
             {
+                var inscriptionTransferDto = inscriptionTransferDtos[i];
                 if (images.TryGetValue(inscriptionTransferDto.Tick, out var image))
                 {
                     inscriptionTransferDto.InscriptionImage = image;
@@ -170,15 +177,20 @@ public class Query
     
     private static async Task<Dictionary<string,string>> GetInscriptionImageAsync(
         IReadOnlyRepository<Entities.Inscription> inscriptionRepository,
-        List<string> ticks)
+        List<string> ticksBefore)
     {
+        var ticks = ticksBefore
+            .Where(t => t.StartsWith(MainChainIdPre))
+            .Select(t => t.Substring(MainChainIdPre.Length))
+            .ToList();
         var inscriptionQueryable = await inscriptionRepository.GetQueryableAsync();
 
-        inscriptionQueryable = inscriptionQueryable.Where(i => ticks.Contains(IdGenerateHelper.GetId(MainChainId, i.Id)));
+        inscriptionQueryable = inscriptionQueryable.Where(i => ticks.Contains(i.Id));
         var inscriptions = inscriptionQueryable.ToList();
         var result = new Dictionary<string, string>();
-        foreach (var inscription in inscriptions)
+        for (int i = 0; i < inscriptions.Count(); i++)
         {
+            var inscription = inscriptions[i];
             if (inscription.CollectionExternalInfo.TryGetValue(InscriptionImageKey, out var image))
             {
                 result.Add(inscription.Tick, image);

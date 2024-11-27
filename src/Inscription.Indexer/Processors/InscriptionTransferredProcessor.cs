@@ -32,6 +32,7 @@ public class InscriptionTransferredProcessor : LogEventProcessorBase<Inscription
         {
             Logger.LogError("eventValue.To is null");
             Logger.LogError("{A}",JsonConvert.SerializeObject(eventValue));
+            throw new Exception("eventValue.To is null");
             return;
         }
         if (eventValue.Amt == null)
@@ -44,12 +45,14 @@ public class InscriptionTransferredProcessor : LogEventProcessorBase<Inscription
         {
             Logger.LogError("eventValue.Tick is null");
             Logger.LogError("{A}",JsonConvert.SerializeObject(eventValue));
+            throw new Exception("eventValue.Tick is null");
             return;
         }
         if (eventValue.Amt == 0)
         {
             Logger.LogError("eventValue.Amt is 0");
             Logger.LogError("{A}",JsonConvert.SerializeObject(eventValue));
+            throw new Exception("eventValue.Amt is 0");
             return;
         }
         await AddInscriptionTransferAsync(context, "Transfer", eventValue.From.ToBase58(), eventValue.To.ToBase58(),
