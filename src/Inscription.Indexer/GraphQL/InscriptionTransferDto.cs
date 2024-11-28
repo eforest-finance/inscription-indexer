@@ -2,7 +2,7 @@ namespace Inscription.Indexer.GraphQL;
 
 public class InscriptionTransferDto : GraphQLDto
 {
-    public string TransactionId { get; set; }
+    public string? TransactionId { get; set; }
     public string Method { get; set; }
     public string FromAddress { get; set; }
     public string ToAddress { get; set; }
