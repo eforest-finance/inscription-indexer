@@ -179,13 +179,9 @@ public class Query
         IReadOnlyRepository<Entities.Inscription> inscriptionRepository,
         List<string> ticksBefore)
     {
-        var ticks = ticksBefore
-            .Where(t => t.StartsWith(MainChainIdPre))
-            .Select(t => t.Substring(MainChainIdPre.Length))
-            .ToList();
         var inscriptionQueryable = await inscriptionRepository.GetQueryableAsync();
 
-        inscriptionQueryable = inscriptionQueryable.Where(i => ticks.Contains(i.Id));
+        inscriptionQueryable = inscriptionQueryable.Where(i => ticksBefore.Contains(i.Tick));
         var inscriptions = inscriptionQueryable.ToList();
         var result = new Dictionary<string, string>();
         for (int i = 0; i < inscriptions.Count(); i++)
