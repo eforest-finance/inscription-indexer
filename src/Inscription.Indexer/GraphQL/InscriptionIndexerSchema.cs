@@ -1,8 +1,8 @@
-using AElfIndexer.Client.GraphQL;
+using AeFinder.Sdk;
 
 namespace Inscription.Indexer.GraphQL;
 
-public class InscriptionIndexerSchema : AElfIndexerClientSchema<Query>
+public class InscriptionIndexerSchema : AppSchema<Query>
 {
     public InscriptionIndexerSchema(IServiceProvider serviceProvider) : base(serviceProvider)
     {
